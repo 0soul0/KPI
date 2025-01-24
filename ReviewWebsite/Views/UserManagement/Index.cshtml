@@ -1,0 +1,16 @@
+﻿@model ReviewWebsite.Models.ViewModel.UserManagementViewModel
+
+@{
+    Layout = "_ManageLayout";
+}
+@section Css {
+    <link rel="stylesheet" href="~/css/users_manage.css" asp-append-version="true" />
+}
+@section Scripts {
+    <script src="~/js/users_manage.js" asp-append-version="true"></script>
+}
+
+<div id="content">
+    @await Html.PartialAsync("_Index", Model)
+</div>
+

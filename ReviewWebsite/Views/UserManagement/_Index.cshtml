@@ -1,0 +1,197 @@
+﻿@model ReviewWebsite.Models.ViewModel.UserManagementViewModel
+
+@{
+    var indexUser = 0;
+    var indexUnit = 0;
+    var accessRights = new Dictionary<String, String>
+    {
+         { "0", "一般人" },
+         { "3", "管理者" },
+    };
+}
+<nav class="navbar navbar-expand-lg navbar-light nav_light m-0 p-0">
+    <div class="container-fluid m-0 p-0">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <span id="user-btn" class="nav-link active_tag">所有使用者</span>
+                </li>
+                <li class="nav-item">
+                    <span id="unit-btn" class="nav-link">單位</span>
+                </li>
+            </ul>
+        </div>
+        <button type="button" id="add-unit" class="btn btn-primary me-4 hidden" data-bs-toggle="modal" data-bs-target="#addUnitModal" style="float: right;">新增單位</button>
+    </div>
+</nav>
+<hr class="hr m-0" />
+<meta name="dynamic-styles" data-href="/css/users_manage.css" />
+<meta name="dynamic-scripts" data-src="/js/users_manage.js" />
+<div>
+    <table class="table table-striped list p-0" id="user-list">
+        <thead>
+            <tr>
+                <th scope="col">
+                    #
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Users.First().Name)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Users.First().Email)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Users.First().Birthday)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Users.First().Telephone)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Users.First().AccessRight)
+                </th>
+                <th scope="col">
+                    操作
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Users != null && Model.Users.Any())
+            {
+                @foreach (var item in Model.Users)
+                {
+                    <tr id="@item.UserId">
+                        <td scope="row">
+                            @indexUser
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Birthday)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telephone)
+                        </td>
+                        <td data-access-number="@item.AccessRight">
+                            @accessRights.GetValueOrDefault(item.AccessRight, "一般人")
+                        </td>
+                        <td>
+                            <span data-bs-toggle="modal" data-bs-target="#userInfoModal" data-id="@item.UserId"><i class="bi bi-pencil"></i></span>
+                        </td>
+                    </tr>
+                    indexUser++;
+                }
+            }
+        </tbody>
+    </table>
+    <table class="table table-striped list mt-2 p-0 hidden" id="unit-list">
+        <thead>
+            <tr>
+                <th scope="col">
+                    #
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Units.First().Name)
+                </th>
+                @*   <th scope="col">
+                操作
+                </th> *@
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Units != null && Model.Units.Any())
+            {
+                @foreach (var item in Model.Units)
+                {
+                    <tr>
+                        <td scope="row">
+                            @indexUnit
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        @*  <td>
+                <span data-bs-toggle="" data-bs-target=""><i class="bi bi-pencil"></i></span>
+                </td> *@
+                    </tr>
+                    indexUnit++;
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
+<div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">使用者資訊</h5>
+            </div>
+            <div class="modal-body">
+                <form asp-controller="UserManagement" asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="Users.FirstOrDefault().UserId" class="form-control" type="hidden" />
+                    <div class="form-group">
+                        <label asp-for="Users.FirstOrDefault().Name" class="control-label"></label>
+                        <input asp-for="Users.FirstOrDefault().Name" class="form-control" disabled />
+                        <span asp-validation-for="Users.FirstOrDefault().Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Users.FirstOrDefault().Email" class="control-label"></label>
+                        <input asp-for="Users.FirstOrDefault().Email" class="form-control" disabled />
+                        <span asp-validation-for="Users.FirstOrDefault().Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Users.FirstOrDefault().Birthday" class="control-label"></label>
+                        <input asp-for="Users.FirstOrDefault().Birthday" class="form-control" disabled />
+                        <span asp-validation-for="Users.FirstOrDefault().Birthday" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Users.FirstOrDefault().Telephone" class="control-label"></label>
+                        <input asp-for="Users.FirstOrDefault().Telephone" class="form-control" disabled />
+                        <span asp-validation-for="Users.FirstOrDefault().Telephone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Users.FirstOrDefault().AccessRight" class="control-label"></label>
+                        <select asp-for="Users.FirstOrDefault().AccessRight" class="form-control">
+                            @foreach (var option in accessRights)
+                            {
+                                <option value="@option.Key">@option.Value</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group d-flex justify-content-end mt-3">
+                        <input type="submit" value="確定" class="btn btn-primary me-2" data-href="" />
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="addUnitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">新增單位</h5>
+            </div>
+            <div class="modal-body">
+                <form asp-controller="UserManagement" asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Units.FirstOrDefault().Name" class="control-label"></label>
+                        <input asp-for="Units.FirstOrDefault().Name" class="form-control" value="" />
+                        <span asp-validation-for="Units.FirstOrDefault().Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group d-flex justify-content-end mt-3">
+                        <input type="submit" value="確定" class="btn btn-primary me-2" data-href="" />
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

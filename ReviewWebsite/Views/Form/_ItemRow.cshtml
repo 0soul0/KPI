@@ -1,0 +1,71 @@
+﻿@model ReviewWebsite.Models.Db.FormContent
+@using static ReviewWebsite.Helpers.ObjectExtensions
+@* <meta name="dynamic-styles" data-href="/css/users_manage.css" />
+<meta name="dynamic-scripts" data-src="/js/users_manage.js" /> *@
+
+@{
+    var widthNums = ViewData["Widths"] as List<float>;
+    var widths = widthNums.Select(w => $"width:{w - 0.5}vw!important;").ToArray();
+    float sw = Convert.ToSingle(ViewData["SubTitleWidths"]);
+    var subTitleWidths = $"width:{sw - 2.1}vw!important;";
+}
+
+
+<tr id="@Model.RowIndex" data-type="@Model.Type">
+
+    @* 排序  *@
+    <td class="index text-center fs-5 p-0 align-middle" style="height:100%; @widths[0]">@Model.RowIndex</td>
+
+    @if (Model != null && Model.Type == "title")
+    {
+        @* 分類標題  *@
+        <td class="fw-bolder fs-5 p-0 align-middle" colspan="5">
+            <div class="pt-2 pb-2 ps-1 pe-1 lh-1 text" contenteditable="true" style="height:100%; @subTitleWidths" oninput="syncHeights(this)">
+                @Model?.CategoryName?.GetValueOrDefault()
+            </div>
+        </td>
+    }
+    else
+    {
+        @* 查核指標  *@
+        <td class="fs-6 p-0  align-middle">
+            <div class="pt-2 pb-2 ps-1 pe-1 lh-1 text" contenteditable="true" style="height:100%; @widths[1]" oninput="syncHeights(this)">
+                @Model?.CheckIndicators?.GetValueOrDefault()
+            </div>
+        </td>
+        @* 查核標準  *@
+        <td class="fs-6 p-0  align-middle">
+            <div class="pt-2 pb-2 ps-1 pe-1 lh-1 text" contenteditable="true" style="height:100%; @widths[2]" oninput="syncHeights(this)">
+                @Model?.CheckStandards?.GetValueOrDefault()
+            </div>
+        </td>
+        @* 應檢附資料  *@
+        <td class="fs-6 p-0  align-middle">
+            <div class="pt-2 pb-2 ps-1 pe-1 lh-1 text" contenteditable="true" style="height:100%; @widths[3]" oninput="syncHeights(this)">
+                @Model?.AttachedInfo?.GetValueOrDefault()
+            </div>
+        </td>
+        @* 評核基準 *@
+        <td class="fs-6 p-0  align-middle">
+            <div class="pt-2 pb-2 ps-1 pe-1 lh-1 text" contenteditable="true" style="height:100%; @widths[4]" oninput="syncHeights(this)">
+                @Model?.Assessment?.GetValueOrDefault()
+            </div>
+        </td>
+        @* KPI連動 *@
+        <td class="fs-6 p-0  align-middle">
+            <div class="pt-2 pb-2 ps-1 pe-1 lh-1 text" style="height:100%; @widths[5]">
+                <span class="kpi">
+                   
+                </span>
+                <i class="bi bi-plus-square" data-bs-toggle="modal" data-id="@Model.RowIndex" data-bs-target="#kpiModal"></i>
+            </div>
+        </td>
+    }
+
+    @* 操作 *@
+    <td class="align-middle p-0">
+        <div class="pt-2 pb-2 ps-1 pe-1 lh-1" style="height:100%; @widths[6]">
+            <i class="bi bi-trash" onclick="removeItemRow(this)"></i>
+        </div>
+    </td>
+</tr>

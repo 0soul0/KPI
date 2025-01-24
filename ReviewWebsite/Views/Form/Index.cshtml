@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ReviewWebsite.Models.Db.FormHead>
+
+@{
+    Layout = "_ManageLayout";
+}
+@section Css {
+    
+}
+@section Scripts {
+   
+}
+<div id="content">
+    @await Html.PartialAsync("_Index", Model)
+</div>
+

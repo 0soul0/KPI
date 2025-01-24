@@ -1,0 +1,96 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    min-height: 100%;
+}
+
+html, body {
+    height: 100%; /* 確保 HTML 和 BODY 滿高 */
+    margin: 0;
+}
+
+.container-fluid {
+    height: 100%; /* 父容器高度設定 */
+}
+
+.row {
+    height: 100%; /* 確保行佔滿高度 */
+}
+
+.col {
+    height: 100%; /* 確保主要內容區域的高度 */
+}
+main {
+    height: 100%;
+}
+
+.nav-item {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 165, 0, 0.1);
+}
+
+.nav-item.active {
+    background-color: rgba(255, 165, 0, 0.3);
+}
+
+.center-box {
+    background-color: white; /* 設置白色底 */
+    padding: 20px; /* 內邊距，讓內容與邊框有距離 */
+    border-radius: 10px; /* 邊角圓滑 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 陰影效果 */
+    margin: 50px auto; /* 使框居中顯示，並距離上方 50px */
+    max-width: 600px; /* 設置最大寬度 */
+    width: 100%; /* 使寬度自適應 */
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block; /* Or use any other appropriate display value, such as flex */
+}
+
+.active_tag {
+    color: rgba(255, 165, 0, 1) !important;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 2px; /* 下底線粗細 */
+    text-underline-offset: 8px;
+}
+
+.hr {
+    padding: 3.5px;
+    color: rgba(180, 180, 180, 0.8)
+}
+
+.list {
+    background-color: white;
+}
+
+.nav_light {
+    background-color: white;
+}
