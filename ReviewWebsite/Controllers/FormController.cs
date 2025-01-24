@@ -182,7 +182,6 @@ namespace ReviewWebsite.Controllers
             return PartialView("_ItemRow", viewModel);
         }
 
-
         private List<float> getTabeHeadsWidth()
         {
             List<float> widths = new List<float>();
@@ -204,69 +203,5 @@ namespace ReviewWebsite.Controllers
         }
 
 
-
-
-
-
-
-
-
-
-        // GET: Form/Details/5
-        public async Task<IActionResult> Details(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var formHead = await _context.FormHead
-                .FirstOrDefaultAsync(m => m.FormHeadId == id);
-            if (formHead == null)
-            {
-                return NotFound();
-            }
-
-            return View(formHead);
-        }
-
-
-        // GET: Form/Delete/5
-        public async Task<IActionResult> Delete(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var formHead = await _context.FormHead
-                .FirstOrDefaultAsync(m => m.FormHeadId == id);
-            if (formHead == null)
-            {
-                return NotFound();
-            }
-
-            return View(formHead);
-        }
-
-        // POST: Form/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
-        {
-            var formHead = await _context.FormHead.FindAsync(id);
-            if (formHead != null)
-            {
-                _context.FormHead.Remove(formHead);
-            }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool FormHeadExists(string id)
-        {
-            return _context.FormHead.Any(e => e.FormHeadId == id);
-        }
     }
 }

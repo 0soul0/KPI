@@ -26,6 +26,30 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluations/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluations/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvbnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluations/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvbnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluations/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvbnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluations/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluations/_Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvbnNcX0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Form/CreateOrEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybVxDcmVhdGVPckVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

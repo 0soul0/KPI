@@ -12,7 +12,7 @@ namespace ReviewWebsite.Models.Db
         [StringLength(15)] // 對應 NVARCHAR(15)
         public required String UnitId { get; set; } // 主鍵
 
-        [DisplayName("單位")]
+        [DisplayName("單位或中心")]
         [StringLength(30)] // 對應 NVARCHAR(30)
         public required String Name { get; set; }
     }

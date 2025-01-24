@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ReviewWebsite.Models.Db.Evaluations>
+
+<nav class="navbar navbar-expand-lg navbar-light nav_light m-0 p-0">
+    <div class="container-fluid m-0 p-0">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <span class="nav-link active_tag">評鑑</span>
+                </li>
+            </ul>
+        </div>
+        <a asp-action="Create" type="button" class="btn btn-primary me-4" asp-controller="Evaluations">新增評鑑</a> |
+    </div>
+</nav>
+<hr class="hr m-0" />
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    #
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rating)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UpdateTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreateTime)
+                </th>
+                <th>
+                    操作
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int index = 0;
+            }
+            @foreach (var item in Model)
+            {
+                index++;
+                <tr>
+                    <th>
+                        @index
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Year)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UpdateTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreateTime)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.EvaluationId"><i class="bi bi-pencil"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

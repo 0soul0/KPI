@@ -19,5 +19,6 @@ namespace ReviewWebsite.Data
         public DbSet<Unit> Unit { get; set; } = default!;
         public DbSet<FormHead> FormHead { get; set; } = default!;
         public DbSet<FormContent> FormContent { get; set; } = default!;
+        public DbSet<Evaluations> Evaluations { get; set; } = default!;
     }
 }

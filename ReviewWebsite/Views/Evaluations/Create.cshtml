@@ -1,0 +1,38 @@
+﻿@model ReviewWebsite.Models.ViewModel.EvaluationsViewModel
+
+@{
+    Layout = "_Layout";
+    // var widthNums = ViewData["Widths"] as List<float>;
+    // var widths = widthNums.Select(w => $"width:{w}vw!important;").ToArray();
+}
+@section Css {
+    @* <link rel="stylesheet" href="~/css/form.css" /> *@
+}
+
+@section Scripts {
+    @* <script src="~/js/form.js" asp-append-version="true"></script> *@
+}
+
+
+<h1 class="text-center mt-4 mb-2">新增評鑑</h1>
+<div class="row justify-content-center">
+    <div class="col-2 form-group">
+         <label asp-for="FormHeads.FirstOrDefault().Name" class="control-label"></label>
+         <select asp-for="FormHeads.FirstOrDefault().Name" class="form-control">
+             @foreach (var item in Model.FormHeads)
+             {
+                 <option value="@item.FormHeadId">@item.Year - @item.Name</option>
+             }
+         </select>
+    </div>
+    <div class="col-2 form-group">
+        <label asp-for="Units.FirstOrDefault().Name" class="control-label"></label>
+        <select asp-for="Units.FirstOrDefault().Name" class="form-control">
+            @foreach (var item in Model.Units)
+            {
+                <option value="@item.UnitId">@item.Name</option>
+            }
+        </select>
+    </div>
+</div>
+<br />
