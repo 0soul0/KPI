@@ -75,7 +75,8 @@ namespace ReviewWebsite.Controllers
                     {
                         lists[j].Add(unit.Name);
                     }
-                    else {
+                    else
+                    {
                         lists[j].Add("");
                     }
                 }
@@ -109,7 +110,7 @@ namespace ReviewWebsite.Controllers
                 EvaluationId = evaluation.EvaluationId,
                 FromName = viewModel.FromName,
                 Year = viewModel.Year,
-                Units=viewModel.Units
+                Units = viewModel.Units
             };
 
             using (var transaction = await _context.Database.BeginTransactionAsync())
@@ -182,138 +183,5 @@ namespace ReviewWebsite.Controllers
                 }
             }
         }
-
-
-
-        //[HttpPost]
-        //[Consumes("application/json")]
-        //public async Task<IActionResult> Create([FromBody] EvaluationCreateOrEditViewModel viewModel)
-        //{
-        //    if (viewModel == null ||
-        //        viewModel.SelectedFromId.IsNullOrEmpty() ||
-        //        viewModel.SelectedUnits.IsNullOrEmpty())
-        //    {
-        //        return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_400);
-        //    }
-
-        //    try
-        //    {
-        //        _context.Add(formViewModel.FormHead);
-        //        _context.AddRange(formViewModel.FormContentList);
-        //        await _context.SaveChangesAsync();
-        //        return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_200);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500);
-        //    }
-
-        //}
-
-
-        //// POST: Evaluations/Create
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("EvaluationId,FormHeadId,Rating,UpdateTime,CreateTime")] Evaluations evaluations)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Add(evaluations);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(evaluations);
-        //}
-
-        // GET: Evaluations/Edit/5
-        //public async Task<IActionResult> Edit(string id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    //var evaluations = await _context.Evaluation.FindAsync(id);
-        //    //if (evaluations == null)
-        //    //{
-        //    //    return NotFound();
-        //    //}
-        //    return View();
-        //}
-
-        //// POST: Evaluations/Edit/5
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(string id, [Bind("EvaluationId,FormHeadId,Rating,UpdateTime,CreateTime")] Evaluation evaluations)
-        //{
-        //    if (id != evaluations.EvaluationId)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(evaluations);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!EvaluationsExists(evaluations.EvaluationId))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(evaluations);
-        //}
-
-        //// GET: Evaluations/Delete/5
-        //public async Task<IActionResult> Delete(string id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var evaluations = await _context.Evaluations
-        //        .FirstOrDefaultAsync(m => m.EvaluationId == id);
-        //    if (evaluations == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(evaluations);
-        //}
-
-        //// POST: Evaluations/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed(string id)
-        //{
-        //    var evaluations = await _context.Evaluations.FindAsync(id);
-        //    if (evaluations != null)
-        //    {
-        //        _context.Evaluations.Remove(evaluations);
-        //    }
-
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
-
-        //private bool EvaluationsExists(string id)
-        //{
-        //    return _context.Evaluations.Any(e => e.EvaluationId == id);
-        //}
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Df0YwtnciBNIBSn32OlXHWTZC+ljIKkXLH2C6mEXvJo=",
+  "Hash": "tSeUUbLflyVefk/EOOpNOR3ErRTwNrTh6bofvWZaG3M=",
   "Source": "ReviewWebsite",
   "BasePath": "_content/ReviewWebsite",
   "Mode": "Default",
@@ -1117,6 +1117,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\handsontable.js"
+    },
+    {
+      "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\report.js",
+      "SourceId": "ReviewWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\",
+      "BasePath": "_content/ReviewWebsite",
+      "RelativePath": "js/report.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\report.js"
     },
     {
       "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\site.js",

@@ -60,6 +60,14 @@
               "target": "Package",
               "version": "[8.0.7, )"
             },
+            "X.PagedList": {
+              "target": "Package",
+              "version": "[10.5.7, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[10.5.7, )"
+            },
             "bootstrap": {
               "target": "Package",
               "version": "[5.3.3, )"

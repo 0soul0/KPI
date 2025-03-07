@@ -259,3 +259,6 @@ C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.pdb
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.genruntimeconfig.cache
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ref\ReviewWebsite.dll
+C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\bin\Debug\net8.0\X.PagedList.dll
+C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.MvcApplicationPartsAssemblyInfo.cs

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<ReviewWebsite.Models.Db.EvaluationList>
+
+<nav class="navbar navbar-expand-lg navbar-light nav_light m-0 p-0">
+    <div class="container-fluid m-0 p-0">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <span class="nav-link active_tag">報告</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<hr class="hr m-0" />
+
+<div class="row ps-3 pe-3">
+  @*   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Button with data-bs-target
+    </button> *@
+    <div id="collapseExample" class="collapse show col-12 card shadow-sm">
+        <div class="card-body h6 pe-0 ps-0 mb-0">
+            <div class="d-flex align-items-center mb-2">
+                <span class="flex-shrink-0 text-start" style="width: 90px;">
+                    <label asp-for="@Model.FirstOrDefault().Units" class="control-label"></label>:
+                </span>
+                <div class="flex-grow-1">
+                    <ol class="list-unstyled d-flex flex-wrap gap-2 mb-0" id="selectable">
+                        @for (var i = 0; i < Model.Count(); i++)
+                        {
+                            var item = Model.ElementAt(i);
+                            <li class="ui-state-default px-3 py-1" data-id="@item.EvaluationId">@item.Year-@item.FromName-@item.Units</li>
+                        }
+                    </ol>
+                </div>
+            </div>
+
+            <!-- 使用 d-flex justify-content-center 來置中按鈕 -->
+            <div class="d-flex justify-content-center">
+                <button id="more" type="button" class="btn btn-primary">更多</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+@* <div class="row ps-3 pe-3">
+    <div class="col-12 card shadow-sm">
+        <div class="card-header-tabs pt-2 d-flex justify-content-between align-items-center">
+            <span class="h2 mx-auto">@ViewData["Title"]</span>
+        </div>
+        <div class="card-body h6 pe-0 ps-0 mb-0">
+            <div class="d-flex align-items-center mb-2">
+                <span class="flex-shrink-0 text-start" style="width: 90px;">
+                    <label asp-for="@Model.FirstOrDefault().Units" class="control-label"></label>
+                </span>
+                <div class="flex-grow-1">
+                    <ol class="list-unstyled d-flex flex-wrap gap-2 mb-0" id="selectable">
+                        @for (var i = 0; i < 10; i++)
+                        {
+                            <li class="ui-state-default px-3 py-1" data-id="@i">@i+"AAAA"</li>
+                        }
+                    </ol>
+                </div>
+            </div>
+            <div class="d-flex align-items-center">
+                 <span class="flex-shrink-0 text-start" style="width: 90px;">
+                     <label asp-for="SelectedFromId" class="control-label"></label>
+                 </span>
+                 <select asp-for="SelectedFromId" class="form-select w-auto me-3"
+                         asp-items="@(new SelectList(Model.FormList, nameof(FormList.FormId), nameof(FormList.Name)))">
+                 </select>
+                 <button id="create" type="button" class="btn btn-success">生成表單</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-12 card shadow-sm mt-2">
+        <div class="card-header-tabs pt-2 d-flex justify-content-between align-items-center">
+            <span class="h2 mx-auto"></span>
+            <button type="button" class="btn btn-success h2 me-3 d-none" id="save">存儲</button>
+        </div>
+        <div class="card-body h6 pe-0 ps-0 mb-0">
+            <div id="spreadsheet" class="scroll-container">
+            </div>
+        </div>
+    </div>
+</div> *@

@@ -229,6 +229,10 @@
       "PackagePath": "staticwebassets\\js\\handsontable.js"
     },
     {
+      "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\report.js",
+      "PackagePath": "staticwebassets\\js\\report.js"
+    },
+    {
       "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
