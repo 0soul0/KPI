@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.SqlServer.Server;
 using ReviewWebsite.Data;
 using ReviewWebsite.Helpers;
 using ReviewWebsite.Models.Db;
 using ReviewWebsite.Models.ViewModel;
 using ReviewWebsite.Models.ViewModel.Request;
+using System.Text.Json;
 
 namespace ReviewWebsite.Controllers
 {   /*
@@ -26,7 +28,7 @@ namespace ReviewWebsite.Controllers
         // GET: Form
         public async Task<IActionResult> Index()
         {
-            var model = await _context.FormHead.ToListAsync();
+            var model = await _context.FormList.ToListAsync();
             return this.ResolveView(nameof(Index), model);
         }
 
@@ -35,41 +37,23 @@ namespace ReviewWebsite.Controllers
         public async Task<IActionResult> Create()
         {
 
-            var formHead = await _context.FormHead.OrderByDescending(f => f.CreateTime).FirstOrDefaultAsync();
-        
-            var viewModel = new FormViewModel() {
-                FormContentList = new List<FormContent> {
-                new FormContent() { FormContentId="",FormHeadId="",RowIndex=1,Type="title" },
-                new FormContent() { FormContentId = "", FormHeadId = "", RowIndex = 2,Type="item" } }
-            };
-            if (formHead != null)
+            var form = await _context.Form.OrderByDescending(f => f.CreateTime).FirstOrDefaultAsync();
+            if (form == null)
             {
-                List<FormContent> formContentList = _context.FormContent.Where(f => f.FormHeadId == formHead.FormHeadId).OrderBy(f => f.RowIndex).ToList();
-                viewModel.FormHead = formHead;
-                viewModel.FormContentList = formContentList;
+                form = new Form()
+                {
+                    FormId = IdGenerator.GenerateUnitId(),
+
+                    Data = JsonSerializer.Serialize(new List<List<object>>
+                {
+                    new List<object> { (DateTime.Now.Year-1911).ToString(),"新評鑑表單","","","","" },
+                    new List<object> { "查核指標", "查核標準", "總分","應檢附資料", "評核基準","KPI連動" },
+                })
+                };
             }
             ViewData["Title"] = "新建表單";
-            return RedirectToCreateOrEdit(viewModel);
-        }
 
-        // GET: Users/Edit/5
-        [HttpGet]
-        public async Task<IActionResult> Edit(string id)
-        {
-            if (id == null)
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            FormHead formHead = await _context.FormHead.FindAsync(id);
-            List<FormContent> formContentList = await _context.FormContent.Where(f => f.FormHeadId == formHead.FormHeadId).OrderBy(f=>f.RowIndex).ToListAsync();
-
-            var viewModel = new FormViewModel
-            {
-                FormHead = formHead,
-                FormContentList = formContentList
-            };
-            ViewData["Title"] = "編輯表單";
-            return RedirectToCreateOrEdit(viewModel);
+            return View("CreateOrEdit", form);
         }
 
 
@@ -78,43 +62,54 @@ namespace ReviewWebsite.Controllers
         public async Task<IActionResult> Create([FromBody] FormViewModel formViewModel)
         {
             if (formViewModel == null ||
-                formViewModel.FormHead == null ||
-                formViewModel.FormContentList.IsNullOrEmpty())
+                formViewModel.Data.IsNullOrEmpty())
             {
-                return Json(new ResponseViewModel
-                {
-                    Code = "400",
-                    Message = "資料錯誤"
-                });
-            }
-            //重新設定GUID
-            formViewModel.FormHead.FormHeadId = IdGenerator.GenerateUnitId();
-            formViewModel.FormContentList.ForEach(item =>
-                {
-                    item.FormHeadId = formViewModel.FormHead.FormHeadId;
-                    item.FormContentId = IdGenerator.GenerateUnitId();
-                });
-
-            try
-            {
-                _context.Add(formViewModel.FormHead);
-                _context.AddRange(formViewModel.FormContentList);
-                await _context.SaveChangesAsync();
-                return Json(new ResponseViewModel
-                {
-                    Code = "200",
-                    Message = ""
-                });
-            }
-            catch (Exception ex)
-            {
-                return Json(new ResponseViewModel
-                {
-                    Code = "500",
-                    Message = "新增資料失敗,請重新嘗試"
-                });
+                return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_400);
             }
 
+            var form = new Form()
+            {
+                FormId = IdGenerator.GenerateUnitId(),
+                Data = formViewModel.Data
+
+            };
+            var formListData = new FormList()
+            {
+                FormListId = IdGenerator.GenerateUnitId(),
+                FormId = form.FormId,
+                Name = formViewModel.Name,
+                Year = formViewModel.Year,
+            };
+
+            using (var transaction = await _context.Database.BeginTransactionAsync())
+            {
+                try
+                {
+                    await _context.Form.AddAsync(form);
+                    await _context.FormList.AddAsync(formListData);
+                    await _context.SaveChangesAsync();
+                    await transaction.CommitAsync();
+                    return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_200);
+                }
+                catch (Exception ex)
+                {
+                    await transaction.RollbackAsync();
+                    return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500);
+                }
+            }
+        }
+
+        //GET: Users/Edit/5
+        [HttpGet]
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            var form = await _context.Form.FirstOrDefaultAsync(m => m.FormId == id);
+            ViewData["Title"] = "編輯表單";
+            return View("CreateOrEdit", form);
         }
 
         [HttpPost]
@@ -123,84 +118,72 @@ namespace ReviewWebsite.Controllers
         {
 
             if (formViewModel == null ||
-              formViewModel.FormHead == null ||
-              formViewModel.FormContentList.IsNullOrEmpty())
+                formViewModel.Data.IsNullOrEmpty())
             {
-                return Json(new ResponseViewModel
+                return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_400);
+            }
+            using (var transaction = await _context.Database.BeginTransactionAsync()) // 開始非同步交易
+            {
+                try
                 {
-                    Code = "400",
-                    Message = "資料錯誤"
-                });
+                    // 更新 Form 表
+                    var form = await _context.Form.FirstOrDefaultAsync(p => p.FormId == formViewModel.FormId);
+                    form.Data = formViewModel.Data;
+                    form.UpdateTime = DateTime.Now; 
+
+                    // 更新 FormList 表
+                    var formList = await _context.FormList.FirstOrDefaultAsync(p => p.FormId == formViewModel.FormId);
+                    formList.Name = formViewModel.Name;
+                    formList.Year = formViewModel.Year;
+                    formList.UpdateTime = DateTime.Now; 
+
+                    // 儲存所有變更
+                    await _context.SaveChangesAsync();
+                    await transaction.CommitAsync();
+                    return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_200);
+                }
+                catch (Exception ex)
+                {
+                    // 若有錯誤，回滾交易
+                    await transaction.RollbackAsync();
+                    return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500);
+
+                }
             }
 
-
-
-            //設定GUID
-            formViewModel.FormContentList.ForEach(item =>
-            {
-                item.FormHeadId = formViewModel.FormHead.FormHeadId;
-                item.FormContentId = IdGenerator.GenerateUnitId();
-            });
-
-            try
-            {
-                _context.Update(formViewModel.FormHead);
-                var itemsToRemove = _context.FormContent.Where(t => t.FormHeadId == formViewModel.FormHead.FormHeadId).ToList();
-                _context.FormContent.RemoveRange(itemsToRemove);
-                _context.AddRange(formViewModel.FormContentList);
-                await _context.SaveChangesAsync();
-                return Json(new ResponseViewModel
-                {
-                    Code = "200",
-                    Message = ""
-                });
-            }
-            catch (Exception ex)
-            {
-                return Json(new ResponseViewModel
-                {
-                    Code = "500",
-                    Message = ex.Message
-                });
-            }
         }
 
 
-        [HttpPost]
-        [Consumes("application/json")]
-        public IActionResult AddItemRow([FromBody] AddItemRowRequest data)
-        {
+        //[HttpPost]
+        //[Consumes("application/json")]
+        //public IActionResult AddItemRow([FromBody] AddItemRowRequest data)
+        //{
 
-            string type = data.Type ?? "item";
-            int rowCount = data.RowCount > 0 ? data.RowCount : 1;
+        //    string type = data.Type ?? "item";
+        //    int rowCount = data.RowCount > 0 ? data.RowCount : 1;
 
-            var viewModel = new FormContent() { FormContentId = "", FormHeadId = "", RowIndex = rowCount, Type = type };
+        //    var viewModel = new FormContent() { FormContentId = "", FormHeadId = "", RowIndex = rowCount, Type = type };
 
-            ViewData["Widths"] = getTabeHeadsWidth();
-            ViewData["SubTitleWidths"] = getTabeHeadsWidth().Skip(1).Take(5).Sum();
-            // 返回新的行的 HTML 結構
-            return PartialView("_ItemRow", viewModel);
-        }
+        //    ViewData["Widths"] = getTabeHeadsWidth();
+        //    ViewData["SubTitleWidths"] = getTabeHeadsWidth().Skip(1).Take(5).Sum();
+        //    // 返回新的行的 HTML 結構
+        //    return PartialView("_ItemRow", viewModel);
+        //}
 
-        private List<float> getTabeHeadsWidth()
-        {
-            List<float> widths = new List<float>();
-            widths.Add(2);
-            widths.Add(13);
-            widths.Add(23);
-            widths.Add(20);
-            widths.Add(25);
-            widths.Add(10);
-            widths.Add(5);
-            return widths;
-        }
+        //private List<float> getTabeHeadsWidth()
+        //{
+        //    List<float> widths = new List<float>();
+        //    widths.Add(2);
+        //    widths.Add(13);
+        //    widths.Add(23);
+        //    widths.Add(20);
+        //    widths.Add(25);
+        //    widths.Add(10);
+        //    widths.Add(5);
+        //    return widths;
+        //}
 
-        private IActionResult RedirectToCreateOrEdit(FormViewModel viewModel)
-        {
-            ViewData["Widths"] = getTabeHeadsWidth();
-            ViewData["SubTitleWidths"] = getTabeHeadsWidth().Skip(1).Take(5).Sum();
-            return View("CreateOrEdit", viewModel);
-        }
+
 
 
     }

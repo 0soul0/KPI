@@ -5,7 +5,8 @@
     {
         ("bi bi-person-circle", "使用者管理", "/UserManagement/Index"),
         ("bi bi-card-list", "評鑑表單", "/Form/Index"),
-        ("bi bi-file-earmark-bar-graph", "評鑑", "/Evaluations/Index")
+        ("bi bi-file-earmark-bar-graph", "評鑑", "/Evaluation/Index"),
+        ("bi bi-gpu-card", "評鑑", "/Report/Index")
     };
 
     bool IsActive(string href)
@@ -29,27 +30,28 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/styles/handsontable.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/styles/ht-theme-main.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ReviewWebsite.styles.css" asp-append-version="true" />
     @await RenderSectionAsync("Css", required: false)
 </head>
 <body>
-    <main role="main" class="">
+    <main role="main" class="h6">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-2 m-0 p-0" style="height:100%">
                     <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="height:100%">
-                        <p class="h4">
+                        <p class="h5">
                             功能列表
                         </p>
-                        <hr />
                         <ul class="nav nav-pills flex-column mb-auto sidebar">
                             @foreach (var item in navItems)
                             {
                                 var isActive = IsActive(item.Href);
-                                <li class="nav-item mt-2 @(isActive ? "active" : "")" href="@item.Href">
-                                    <span class="h5">
+                                <li class="nav-item @(isActive ? "active" : "")" href="@item.Href">
+                                    <span class="h6">
                                         <i class="@item.Icon"></i> @item.Label
                                     </span>
                                 </li>
@@ -80,6 +82,8 @@
             Manage
         </div>
     </footer>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -1,3 +1,12 @@
+C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.csproj.AssemblyReference.cache
+C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.AssemblyInfoInputs.cache
+C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.AssemblyInfo.cs
+C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.csproj.CoreCompileInputs.cache
+C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.RazorAssemblyInfo.cache
+C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.RazorAssemblyInfo.cs
+C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.sourcelink.json
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\bin\Debug\net8.0\appsettings.json
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\bin\Debug\net8.0\ReviewWebsite.staticwebassets.runtime.json
@@ -233,14 +242,6 @@ C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\bin\Debug\net8
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
-C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.csproj.AssemblyReference.cache
-C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.AssemblyInfoInputs.cache
-C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.AssemblyInfo.cs
-C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.csproj.CoreCompileInputs.cache
-C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.RazorAssemblyInfo.cache
-C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.RazorAssemblyInfo.cs
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\staticwebassets\msbuild.ReviewWebsite.Microsoft.AspNetCore.StaticWebAssets.props
@@ -258,4 +259,3 @@ C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.pdb
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.genruntimeconfig.cache
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ref\ReviewWebsite.dll
-C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.sourcelink.json

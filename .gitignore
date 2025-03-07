@@ -1,0 +1,49 @@
+# 🌟 Visual Studio 相關（避免提交 VS 設定、暫存檔）
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.cache
+*.pdb
+
+# 🌟 建置產生的檔案（避免提交編譯後的內容）
+bin/
+obj/
+out/
+Debug/
+Release/
+
+# 🌟 NuGet 相關（避免提交套件的快取與還原資料）
+*.nupkg
+packages/
+project.lock.json
+project.assets.json
+nuget.lock
+
+# 🌟 .NET Core 相關
+*.deps.json
+*.runtimeconfig.json
+*.dll
+*.exe
+*.db
+*.log
+
+# 🌟 Entity Framework 相關（避免提交 Migrations 產生的暫存檔）
+Migrations/
+
+# 🌟 node.js 相關（如果有前端開發）
+node_modules/
+npm-debug.log
+yarn.lock
+
+# 🌟 IDE 相關
+.idea/
+*.iml
+
+# 🌟 macOS 相關
+.DS_Store
+
+# 🌟 Windows 相關
+Thumbs.db
+desktop.ini

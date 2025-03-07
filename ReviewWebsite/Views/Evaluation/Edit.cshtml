@@ -1,0 +1,41 @@
+﻿@model ReviewWebsite.Models.Db.Evaluation
+
+@{
+    Layout = "_Layout";
+    // var widthNums = ViewData["Widths"] as List<float>;
+    // var widths = widthNums.Select(w => $"width:{w}vw!important;").ToArray();
+}
+@section Css {
+    <link rel="stylesheet" href="~/css/evalution.css" />
+    <link rel="stylesheet" href="~/css/common.css" />
+}
+
+@section Scripts {
+    <script src="~/js/handsontable.js" asp-append-version="true"></script>
+    <script src="~/js/common.js" asp-append-version="true"></script>
+    <script src="~/js/evalution.js" asp-append-version="true"></script>
+
+    <script>
+        $(function () {
+            getFormTable();
+        });
+    </script>
+}
+
+<div>
+    <span id="EvaluationId" hidden>@Model.EvaluationId</span>
+    <span id="Data" hidden>@Model.Data</span>
+</div>
+<div class="row ps-3 pe-3">
+    <div class="col-12 card shadow-sm mt-2">
+        <div class="card-header-tabs pt-2 d-flex justify-content-between align-items-center">
+            <span class="h2 mx-auto">@ViewData["Title"]</span>
+            <button type="button" class="btn btn-success h2 me-3" id="save">存儲</button>
+        </div>
+        <div class="card-body h6 pe-0 ps-0 mb-0">
+            <div id="spreadsheet" class="scroll-container">
+                
+            </div>
+        </div>
+    </div>
+</div>

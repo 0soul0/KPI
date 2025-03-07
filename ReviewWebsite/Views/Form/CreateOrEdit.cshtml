@@ -1,34 +1,47 @@
-﻿@model ReviewWebsite.Models.ViewModel.FormViewModel
+﻿@model ReviewWebsite.Models.Db.Form
 @{
     Layout = "_Layout";
-    var widthNums = ViewData["Widths"] as List<float>;
-    var widths = widthNums.Select(w => $"width:{w}vw!important;").ToArray();
 }
 @section Css {
+    <link rel="stylesheet" href="~/css/common.css" />
     <link rel="stylesheet" href="~/css/form.css" />
 }
 
 @section Scripts {
+    <script src="~/js/common.js" asp-append-version="true"></script>
+    <script src="~/js/handsontable.js" asp-append-version="true"></script>
     <script src="~/js/form.js" asp-append-version="true"></script>
 }
-
-
-
-<h1 class="text-center mt-4 mb-2">@ViewData["Title"]</h1>
-<input asp-for="FormHead.FormHeadId" class="form-control" hidden />
-<div class="row justify-content-center">
-    <div class="col-3 form-group">
-        <label asp-for="FormHead.Year" class="control-label"></label>
-        <input asp-for="FormHead.Year" class="form-control" />
-        <span asp-validation-for="FormHead.Year" class="text-danger"></span>
+<div>
+    <span id="FormId" hidden>@Model.FormId</span>
+    <span id="Data" hidden>@Model.Data</span>
+</div>
+<div class="card shadow-sm">
+    <div class="card-header-tabs pt-2 d-flex justify-content-between align-items-center">
+        <span class="h2 mx-auto">@ViewData["Title"]</span>
+        <button type="button" class="btn btn-success h2 me-3" id="save">存儲</button>
     </div>
-    <div class="col-3 form-group">
-        <label asp-for="FormHead.Name" class="control-label"></label>
-        <input asp-for="FormHead.Name" class="form-control" />
-        <span asp-validation-for="FormHead.Name" class="text-danger"></span>
+    <div class="card-body">
+        <div id="spreadsheet" class="scroll-container">
+        </div>
     </div>
 </div>
-<br />
+
+
+@*  <input asp-for="FormHead.FormHeadId" class="form-control" hidden />
+ <div class="row justify-content-center">
+     <div class="col-3 form-group">
+         <label asp-for="FormHead.Year" class="control-label"></label>
+         <input asp-for="FormHead.Year" class="form-control" />
+         <span asp-validation-for="FormHead.Year" class="text-danger"></span>
+     </div>
+     <div class="col-3 form-group">
+         <label asp-for="FormHead.Name" class="control-label"></label>
+         <input asp-for="FormHead.Name" class="form-control" />
+         <span asp-validation-for="FormHead.Name" class="text-danger"></span>
+     </div>
+ </div>
+ <br />
 <div class="ms-3 me-3">
     <div class="row row justify-content-center">
         <div class="col-12 align-middle">
@@ -85,9 +98,9 @@
     </div>
 </div>
 
-@* <div>
+ <div>
     <a asp-action="Index">Back to List</a>
-</div> *@
+</div>
 
 <div class="modal fade" id="kpiModal" tabindex="-1" aria-labelledby="kpiModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -112,4 +125,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> *@

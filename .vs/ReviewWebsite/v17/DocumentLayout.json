@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\models\\db\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\models\\db\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\models\\viewmodel\\evaluationsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\models\\viewmodel\\evaluationsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\reviewwebsite.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\reviewwebsite.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\views\\evaluations\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\views\\evaluations\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\controllers\\evaluationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\controllers\\evaluationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\controllers\\evaluationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\controllers\\evaluationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\controllers\\formcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\controllers\\formcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\views\\shared\\_managelayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\views\\shared\\_managelayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\wwwroot\\js\\evalution.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\wwwroot\\js\\evalution.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +43,92 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Unit.cs",
-              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Models\\Db\\Unit.cs",
-              "RelativeDocumentMoniker": "ReviewWebsite\\Models\\Db\\Unit.cs",
-              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Models\\Db\\Unit.cs",
-              "RelativeToolTip": "ReviewWebsite\\Models\\Db\\Unit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T10:15:30.265Z",
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\.gitignore",
+              "RelativeDocumentMoniker": "ReviewWebsite\\.gitignore",
+              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\.gitignore",
+              "RelativeToolTip": "ReviewWebsite\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-03-07T09:10:01.874Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EvaluationsViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Models\\ViewModel\\EvaluationsViewModel.cs",
-              "RelativeDocumentMoniker": "ReviewWebsite\\Models\\ViewModel\\EvaluationsViewModel.cs",
-              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Models\\ViewModel\\EvaluationsViewModel.cs",
-              "RelativeToolTip": "ReviewWebsite\\Models\\ViewModel\\EvaluationsViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T10:13:06.373Z",
+              "Title": "ReviewWebsite",
+              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\ReviewWebsite.csproj",
+              "RelativeDocumentMoniker": "ReviewWebsite\\ReviewWebsite.csproj",
+              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\ReviewWebsite.csproj*",
+              "RelativeToolTip": "ReviewWebsite\\ReviewWebsite.csproj*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-07T09:09:26.114Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Views\\Evaluations\\Create.cshtml",
-              "RelativeDocumentMoniker": "ReviewWebsite\\Views\\Evaluations\\Create.cshtml",
-              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Views\\Evaluations\\Create.cshtml",
-              "RelativeToolTip": "ReviewWebsite\\Views\\Evaluations\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-24T10:10:47.614Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Program.cs",
+              "RelativeDocumentMoniker": "ReviewWebsite\\Program.cs",
+              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Program.cs",
+              "RelativeToolTip": "ReviewWebsite\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T09:08:05.503Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "EvaluationsController.cs",
-              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Controllers\\EvaluationsController.cs",
-              "RelativeDocumentMoniker": "ReviewWebsite\\Controllers\\EvaluationsController.cs",
-              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Controllers\\EvaluationsController.cs",
-              "RelativeToolTip": "ReviewWebsite\\Controllers\\EvaluationsController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowCsAAAAnAAAAAAAAAA==",
+              "Title": "EvaluationController.cs",
+              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Controllers\\EvaluationController.cs",
+              "RelativeDocumentMoniker": "ReviewWebsite\\Controllers\\EvaluationController.cs",
+              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Controllers\\EvaluationController.cs",
+              "RelativeToolTip": "ReviewWebsite\\Controllers\\EvaluationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T10:10:33.021Z",
+              "WhenOpened": "2025-03-07T09:02:21.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormController.cs",
+              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Controllers\\FormController.cs",
+              "RelativeDocumentMoniker": "ReviewWebsite\\Controllers\\FormController.cs",
+              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Controllers\\FormController.cs",
+              "RelativeToolTip": "ReviewWebsite\\Controllers\\FormController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T09:02:07.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_ManageLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Views\\Shared\\_ManageLayout.cshtml",
+              "RelativeDocumentMoniker": "ReviewWebsite\\Views\\Shared\\_ManageLayout.cshtml",
+              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Views\\Shared\\_ManageLayout.cshtml*",
+              "RelativeToolTip": "ReviewWebsite\\Views\\Shared\\_ManageLayout.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-07T09:00:19.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "evalution.js",
+              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\evalution.js",
+              "RelativeDocumentMoniker": "ReviewWebsite\\wwwroot\\js\\evalution.js",
+              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\evalution.js",
+              "RelativeToolTip": "ReviewWebsite\\wwwroot\\js\\evalution.js",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-03-07T08:50:29.809Z",
               "EditorCaption": ""
             }
           ]

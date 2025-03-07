@@ -1,17 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReviewWebsite.Models.Db;
+using System.ComponentModel.DataAnnotations;
 
 namespace ReviewWebsite.Models.ViewModel
 {
     public class FormViewModel
     {
         
-        public FormViewModel() {
-           
-        }
-        [FromBody]
-        public FormHead FormHead { get; set; }
-        [FromBody]
-        public List<FormContent>? FormContentList { get; set; }
+        public string Data { get; set; }
+
+        public String FormId { get; set; }
+
+        public String Name { get; set; }
+
+        public int Year { get; set; }
     }
 }

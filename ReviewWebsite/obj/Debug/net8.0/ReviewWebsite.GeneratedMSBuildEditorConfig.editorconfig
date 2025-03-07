@@ -26,28 +26,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluations/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvbnNcQ3JlYXRlLmNzaHRtbA==
+[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluation/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluations/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvbnNcRGVsZXRlLmNzaHRtbA==
+[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluation/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvblxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluations/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvbnNcRGV0YWlscy5jc2h0bWw=
+[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluations/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvbnNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluations/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvbnNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluations/_Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvbnNcX0luZGV4LmNzaHRtbA==
+[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Evaluation/_Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZhbHVhdGlvblxfSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Form/CreateOrEdit.cshtml]
@@ -60,10 +52,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Form/_Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybVxfSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Form/_ItemRow.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybVxfSXRlbVJvdy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/bill.liu/Desktop/Project/web/ReviewWebsite/ReviewWebsite/Views/Shared/Error.cshtml]

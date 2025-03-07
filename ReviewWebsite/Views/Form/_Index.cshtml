@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ReviewWebsite.Models.Db.FormHead>
+﻿@model IEnumerable<ReviewWebsite.Models.Db.FormList>
 
 
 @* <meta name="dynamic-styles" data-href="/css/users_manage.css" />
@@ -13,7 +13,7 @@
                 </li>
             </ul>
         </div>
-        <a asp-action="Create" type="button" class="btn btn-primary me-4" asp-controller="Form">新增表單</a> |
+        <a asp-action="Create" type="button" class="btn btn-primary me-4" asp-controller="Form">新增表單</a>
     </div>
 </nav>
 <hr class="hr m-0" />
@@ -65,7 +65,7 @@
                         @Html.DisplayFor(modelItem => item.CreateTime)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.FormHeadId"><i class="bi bi-pencil"></i></a>
+                        <a asp-action="Edit" asp-route-id="@item.FormId"><i class="bi bi-pencil"></i></a>
                     </td>
                 </tr>
             }

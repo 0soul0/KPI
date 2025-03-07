@@ -1,0 +1,68 @@
+﻿/*table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 8px;
+    position: relative;
+}
+
+    th.resizable {
+        position: relative;
+    }
+
+        th.resizable:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            cursor: col-resize;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+.rounded-border {
+    border: 2px solid black;*/ /* Black border */
+    /*border-radius: 15px;*/ /* Rounded corners */
+    /*padding: 10px;*/ /* Optional: adds padding inside the element */
+/*}
+
+#feedback {
+    font-size: 1.4em;
+}*/
+
+/*#selectable .ui-selected {
+    background: #F39814;
+    color: white;
+    border: 1px solid #ff6a00;
+}
+
+#selectable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 450px;
+}
+
+    #selectable li {
+        margin: 3px;
+        padding:3px 6px 3px 5px;
+        float: left;
+        font-size: 1em;*/ /* 調整字體大小以適應橢圓 */
+        /*text-align: center;
+        border: 1px solid #808080;
+        border-radius: 50px 50px 50px 50px;*/ /* 左右圓角，中間較長 */
+        /*background-color: transparent;*/ /* 添加背景顏色，方便觀察效果 */
+    /*}*/
+/*
+.portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+}
+
+*/
