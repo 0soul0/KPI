@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 using ReviewWebsite.Data;
 using ReviewWebsite.Models.Db;
@@ -31,10 +32,10 @@ namespace ReviewWebsite.Controllers
         //GET: Reports
         public async Task<IActionResult> Index(int? page)
         {
-            int pageSize = 20;
+            int pageSize = 2;
             int pageNumber = page ?? 1;
 
-            var model =  _context.EvaluationList
+            var model = _context.EvaluationList
             .OrderBy(e => e.UpdateTime).ToPagedList(pageNumber, pageSize);
             return this.ResolveView(nameof(Index), model);
         }
@@ -43,15 +44,92 @@ namespace ReviewWebsite.Controllers
         [Consumes("application/json")]
         public async Task<IActionResult> More(int page)
         {
-            int pageSize = 20;
+            int pageSize = 2;
             int pageNumber = page;
             var model = _context.EvaluationList
             .OrderBy(e => e.UpdateTime).ToPagedList(pageNumber, pageSize);
-            return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_200, data: JsonSerializer.Serialize(model));
+
+
+            return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_200,
+                data: JsonSerializer.Serialize(model), extraData: JsonSerializer.Serialize(model.IsLastPage));
         }
 
 
+        [HttpPost]
+        [Consumes("application/json")]
+        public async Task<IActionResult> CreateReport([FromBody] CreateReportRequest request)
+        {
 
+            if (request == null ||
+                  request.SelectedEvaluations.IsNullOrEmpty())
+            {
+                return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_400);
+            }
+
+            // 所有的 table 數據
+            List<List<List<object>>> allTables = new List<List<List<object>>>();
+            //取得評估表單
+            foreach (var item in request.SelectedEvaluations)
+            {
+                var evaluations = await _context.Evaluation
+                  .Where(fh => fh.EvaluationId == item.EvaluationId)
+                  .FirstOrDefaultAsync();
+                List<List<object>> table = JsonSerializer.Deserialize<List<List<object>>>(evaluations.Data);
+                allTables.Add(table);
+            }
+
+            List<List<object>> result = combineTable(allTables);
+
+            return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_200, data: JsonSerializer.Serialize(result));
+        }
+
+        private List<List<object>> combineTable(List<List<List<object>>> tables)
+        {
+
+            // 組合結果
+            List<List<object>> result = new List<List<object>>();
+            //標頭
+            var titles = new List<object>();
+            //子標題
+            var subTitles = new HashSet<object>(tables[0][1]);
+            //內容
+            var mergedTable = new Dictionary<string, List<object>>();
+            foreach (var table in tables)
+            {
+                titles.Add($"{table[0][0]}-{table[0][1]}");
+                subTitles.Union(table[1]);
+            }
+            foreach (var table in tables)
+            {
+
+                foreach (var row in table.Skip(2))
+                {
+                    if (row[0] == null|| row[0].ToString().Equals("")) { continue; }
+                    string key = row[0].ToString();
+
+                    if (mergedTable.ContainsKey(key))
+                    {
+                        mergedTable[key].Union(row);
+                    }
+                    else
+                    {
+                        mergedTable[key] = new List<object>(row);
+                    }
+
+                }
+            }
+            int targetLength = subTitles.Count();
+            var titleList = titles.ToList().Concat(Enumerable.Repeat("", targetLength - titles.Count()));
+            result.Add(titleList.ToList());
+            result.Add(subTitles.ToList());
+            foreach (var entry in mergedTable)
+            {
+                var list = entry.Value;
+                var paddedList = list.Concat(Enumerable.Repeat<object>("", targetLength - list.Count)).ToList();
+                result.Add(paddedList);
+            }
+            return result;
+        }
 
         ////GET: Report/Create
         //public async Task<IActionResult> Create()

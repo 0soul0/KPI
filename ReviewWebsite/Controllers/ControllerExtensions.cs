@@ -11,7 +11,7 @@ namespace ReviewWebsite.Controllers
         public const int RESPONCE_CODE_400 = 400;
         public const int RESPONCE_CODE_500 = 500;
 
-        public static JsonResult ResponseJson(this Controller controller, int code,string data="", string message = "")
+        public static JsonResult ResponseJson(this Controller controller, int code,string data="",string extraData="", string message = "")
         {
             if (message.IsNullOrEmpty())
             {
@@ -28,7 +28,8 @@ namespace ReviewWebsite.Controllers
             {
                 Code = code.ToString(),
                 Message = message,
-                Data = data
+                Data = data,
+                ExtraData = extraData
             });
         }
 

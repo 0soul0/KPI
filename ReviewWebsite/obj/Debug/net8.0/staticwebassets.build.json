@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tSeUUbLflyVefk/EOOpNOR3ErRTwNrTh6bofvWZaG3M=",
+  "Hash": "Ffw5pFvFVLIoGaFpKbdp1o55/zM5C8dK8BQKL8zHzt0=",
   "Source": "ReviewWebsite",
   "BasePath": "_content/ReviewWebsite",
   "Mode": "Default",
@@ -984,6 +984,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\main.css"
+    },
+    {
+      "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\css\\report.css",
+      "SourceId": "ReviewWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\",
+      "BasePath": "_content/ReviewWebsite",
+      "RelativePath": "css/report.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\report.css"
     },
     {
       "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\css\\site.css",

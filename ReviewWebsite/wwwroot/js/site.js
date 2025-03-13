@@ -28,7 +28,9 @@ function bindSideBarEvent() {
                 href,
                 {},
                 function (response) {   // 自定义错误处理
-                  
+                    // 插入內容
+                    history.pushState(null, '', href);
+                    $('#content-area').html(response);
                 },
                 function (error) {   // 自定义错误处理
                     console.log("error:" + error)
@@ -50,14 +52,6 @@ function loadAjax(type, href, data, onSuccess, onError,changeUrl=true) {
         }), // 合并后的数据
         //data: requestData,
         success: function (response) {
-            const contentArea = document.getElementById('content-area');
-            if (changeUrl) {
-                // 插入內容
-                history.pushState(null, '', href);
-            }
-
-            $('#content-area').html(response);
-
             // 動態加載 JS 和 CSS
             const styles = $("meta[name='dynamic-styles']").data("href");
             const scripts = $("meta[name='dynamic-scripts']").data("src");

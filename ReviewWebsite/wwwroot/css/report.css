@@ -1,0 +1,15 @@
+﻿.more-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 14px;
+    border: none;
+    background: none;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+    .more-btn:hover {
+        border: none;
+        background: none;
+        color: #007bff;
+    }

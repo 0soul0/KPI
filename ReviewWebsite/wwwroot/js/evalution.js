@@ -2,8 +2,10 @@
     bindEvent();
 });
 
-let selectedUnits=[]
+
 function bindEvent() {
+
+    let selectedUnits = []
     $("#create").on('click', function () {
 
         selectedUnits = $(".ui-selected").map((_, el) => ({

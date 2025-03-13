@@ -16,7 +16,7 @@ namespace ReviewWebsite.Models.Db
         [StringLength(15)]
         public string EvaluationId { get; set; }
 
-        [DisplayName("表單名稱")]
+        [DisplayName("評鑑表單名")]
         public string FromName { get; set; }
 
         [DisplayName("年份")]
