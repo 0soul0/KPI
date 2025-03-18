@@ -1,22 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 using ReviewWebsite.Data;
 using ReviewWebsite.Models.Db;
 using ReviewWebsite.Models.ViewModel.Request;
-using X.PagedList;
 using X.PagedList.Extensions;
-using X.PagedList.Mvc.Core;
 
 namespace ReviewWebsite.Controllers
 {
@@ -30,7 +19,7 @@ namespace ReviewWebsite.Controllers
         }
 
         //GET: Reports
-        public async Task<IActionResult> Index(int? page)
+        public IActionResult Index(int? page)
         {
             int pageSize = 2;
             int pageNumber = page ?? 1;
@@ -42,7 +31,7 @@ namespace ReviewWebsite.Controllers
 
         //GET: Reports
         [Consumes("application/json")]
-        public async Task<IActionResult> More(int page)
+        public Task<IActionResult> More(int page)
         {
             int pageSize = 2;
             int pageNumber = page;
@@ -50,8 +39,8 @@ namespace ReviewWebsite.Controllers
             .OrderBy(e => e.UpdateTime).ToPagedList(pageNumber, pageSize);
 
 
-            return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_200,
-                data: JsonSerializer.Serialize(model), extraData: JsonSerializer.Serialize(model.IsLastPage));
+            return Task.FromResult<IActionResult>(this.ResponseJson(ControllerExtensions.RESPONCE_CODE_200,
+                data: JsonSerializer.Serialize(model), extraData: JsonSerializer.Serialize(model.IsLastPage)));
         }
 
 
@@ -73,8 +62,8 @@ namespace ReviewWebsite.Controllers
             {
                 var evaluations = await _context.Evaluation
                   .Where(fh => fh.EvaluationId == item.EvaluationId)
-                  .FirstOrDefaultAsync();
-                List<List<object>> table = JsonSerializer.Deserialize<List<List<object>>>(evaluations.Data);
+                  .FirstOrDefaultAsync()?? new Evaluation { Data = "[]" };
+                List<List<object>> table = JsonSerializer.Deserialize<List<List<object>>>(evaluations.Data) ?? [];
                 allTables.Add(table);
             }
 

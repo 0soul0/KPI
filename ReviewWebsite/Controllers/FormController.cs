@@ -94,7 +94,7 @@ namespace ReviewWebsite.Controllers
                 catch (Exception ex)
                 {
                     await transaction.RollbackAsync();
-                    return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500);
+                    return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500, message: ex.Message);
                 }
             }
         }
@@ -128,14 +128,21 @@ namespace ReviewWebsite.Controllers
                 {
                     // 更新 Form 表
                     var form = await _context.Form.FirstOrDefaultAsync(p => p.FormId == formViewModel.FormId);
+                    if (form == null) {
+                        throw new Exception("form is null");
+                    }
                     form.Data = formViewModel.Data;
-                    form.UpdateTime = DateTime.Now; 
+                    form.UpdateTime = DateTime.Now;
 
                     // 更新 FormList 表
                     var formList = await _context.FormList.FirstOrDefaultAsync(p => p.FormId == formViewModel.FormId);
+                    if (formList == null)
+                    {
+                        throw new Exception("form is null");
+                    }
                     formList.Name = formViewModel.Name;
                     formList.Year = formViewModel.Year;
-                    formList.UpdateTime = DateTime.Now; 
+                    formList.UpdateTime = DateTime.Now;
 
                     // 儲存所有變更
                     await _context.SaveChangesAsync();
@@ -146,7 +153,7 @@ namespace ReviewWebsite.Controllers
                 {
                     // 若有錯誤，回滾交易
                     await transaction.RollbackAsync();
-                    return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500);
+                    return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500,message:ex.Message);
 
                 }
             }

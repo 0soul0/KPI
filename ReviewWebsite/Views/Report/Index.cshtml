@@ -3,16 +3,6 @@
 @{
     Layout = "_ManageLayout";
 }
-@section Css {
-    <link rel="stylesheet" href="~/css/common.css" />
-    <link rel="stylesheet" href="~/css/report.css" />
-}
-
-@section Scripts {
-    <script src="~/js/handsontable.js" asp-append-version="true"></script>
-    <script src="~/js/common.js" asp-append-version="true"></script>
-    <script src="~/js/report.js" asp-append-version="true"></script>
-}
 
 <div id="content">
     @await Html.PartialAsync("_Index", Model)

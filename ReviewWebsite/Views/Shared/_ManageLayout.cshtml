@@ -1,24 +1,27 @@
 ﻿@{
-    var currentUrl = Context.Request.Path.Value ?? string.Empty;
+    var currentUrl = Context.Request.Path + Context.Request.QueryString ?? string.Empty;
     // Define a list of navigation items
-    var navItems = new List<(string Icon, string Label, string Href)>
+
+    var navItems = new List<(string Icon, string Label, string Href, int Level)>
     {
-        ("bi bi-person-circle", "使用者管理", "/UserManagement/Index"),
-        ("bi bi-card-list", "評鑑表單", "/Form/Index"),
-        ("bi bi-file-earmark-bar-graph", "評鑑", "/Evaluation/Index"),
-        ("bi bi-gpu-card", "報告", "/Report/Index")
+        ("bi bi-kanban", "會員管理", "",0),
+        ("bi bi-person-circle", "會員", "/UserManagement?from=user",1),
+        ("bi bi-building", "單位與中心", "/UserManagement?from=unit",1),
+        ("bi bi-card-list", "評鑑表單", "/Form",0),
+        ("bi bi-file-earmark-bar-graph", "評鑑", "/Evaluation",0),
+        ("bi bi-gpu-card", "報告", "/Report",0)
     };
 
     bool IsActive(string href)
     {
-        if (string.IsNullOrEmpty(currentUrl)) return false;
+        if (string.IsNullOrEmpty(href)) return false;
+        return currentUrl.Contains(href, StringComparison.OrdinalIgnoreCase);
+    }
 
-        // Special case: treat "/" as "/home/index"
-        if (currentUrl == "/" ||
-            currentUrl.EndsWith("/UserManagement")
-        ) currentUrl = "/UserManagement/index";
-
-        return href.Equals(currentUrl, StringComparison.OrdinalIgnoreCase);
+    string getP(int level)
+    {
+        if (level == 0) return "";
+        return "p-1 " + "ms-" + level * 3;
     }
 }
 
@@ -28,17 +31,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/styles/handsontable.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/styles/ht-theme-main.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/ReviewWebsite.styles.css" asp-append-version="true" />
+    @Html.Partial("LoadCSS")
     @await RenderSectionAsync("Css", required: false)
 </head>
 <body>
+
     <main role="main" class="h6">
+        @* sidebar *@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-2 m-0 p-0" style="height:100%">
@@ -50,26 +49,36 @@
                             @foreach (var item in navItems)
                             {
                                 var isActive = IsActive(item.Href);
-                                <li class="nav-item @(isActive ? "active" : "")" href="@item.Href">
-                                    <span class="h6">
-                                        <i class="@item.Icon"></i> @item.Label
-                                    </span>
+                                var p = getP(item.Level);
+                                <li class="nav-item @p @(isActive ? "active" : "")" href="@item.Href">
+                                    <i class="@item.Icon h6"></i> @item.Label
                                 </li>
-
                             }
                         </ul>
                     </div>
                 </div>
                 <div id="content-area" class="col-10 m-0 p-0">
-                    @*      <div id="body-header">
-                    <nav class="navbar navbar-expand-lg navbar-light nav_light m-0 p-0">
-                    <div class="container-fluid m-0 p-0">
-                    @RenderSection("Nav", required: false)
+                    @* head *@
+                    <div id="body-header">
+                        <nav class="navbar navbar-light bg-light">
+                            <div class="container-fluid p-0">
+                                <a class="navbar-brand" href="#">
+                                    @* <img src="/assets/user.png" alt="" width="30" height="30" class="d-inline-block align-text-top"> *@
+                                    logo
+                                </a>
+                                <div class="d-flex align-items-center dropdown">
+                                    <span class="h6 mb-0">嗨,會員</span>
+                                    <a class="nav-link dropdown-toggle p-1" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="/assets/user.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+                                    </a>
+                                    <ul class="dropdown-menu p-0 me-2" aria-labelledby="navbarDropdown">
+                                        <li><span class="dropdown-item h6" href="#">登出</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
                     </div>
-                    </nav>
-                    <hr class="hr m-0" />
-                    </div> *@
-
+                    @* body *@
                     <div id="body-content">
                         @RenderBody()
                     </div>
@@ -82,15 +91,8 @@
             Manage
         </div>
     </footer>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+    @Html.Partial("LoadJS")
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-
-
-

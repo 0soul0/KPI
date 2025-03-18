@@ -6,54 +6,57 @@
 <meta name="dynamic-scripts" data-src="/js/common.js" />
 <meta name="dynamic-scripts" data-src="/js/report.js" />
 
-<nav class="navbar navbar-expand-lg navbar-light nav_light m-0 p-0">
-    <div class="container-fluid m-0 p-0">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <span class="nav-link active_tag">報告</span>
-                </li>
-            </ul>
-        </div>
+<div class="card">
+    <div class="card-body pt-1 pb-1">
+        <nav class="navbar navbar-expand-lg navbar-light nav_light m-0 p-0">
+            <div class="container-fluid m-0 p-0">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <span class="nav-link active_tag p-0">報告</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
-</nav>
+</div>
+
 <hr class="hr m-0" />
 
 <div class="row ps-3 pe-3">
-    @*   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-bs-target
-    </button> *@
-    <div id="collapseExample" class="collapse show col-12 card shadow-sm">
-        <div class="card-body h6 pe-0 ps-0 mb-0 row">
-            <div class=" col-10">
-                <div class="d-flex align-items-center mb-2">
-                    <span class="flex-shrink-0 text-start" style="width: 90px;">
-                        <label asp-for="@Model.FirstOrDefault().FromName" class="control-label"></label>:
-                    </span>
-                    <div class="flex-grow-1">
-                        <ol class="list-unstyled d-flex flex-wrap gap-2 mb-0" id="selectable">
-                            @for (var i = 0; i < Model.Count(); i++)
-                            {
-                                var item = Model.ElementAt(i);
-                                <li class="ui-state-default px-3 py-1" data-id="@item.EvaluationId">@item.Year-@item.FromName-@item.Units</li>
-                            }
-                        </ol>
-                    </div>
-
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div id="more" class="btn btn-outline-primary btn-sm more-btn">更多</div>
-                </div>
-            </div>
-            <div class="col-2 text-end">
-                <button id="create" type="button" class="btn h4 btn-success">產生報表</button>
-            </div>
-        
+  
+    <div id="collapseExample" class="collapse show col-12 card shadow-sm p-0">
+        <div class="card-header-tab d-flex justify-content-end pe-3 ps-3 pt-3">
+            <button type="button" class="btn btn-success h2 m-0" id="create">產生報表</button>
         </div>
+
+        <div class="card-body h6 pe-0 ps-3 pe-3 mb-0 pt-1">
+            <div class="d-flex align-items-center">
+                <span class="flex-shrink-0 text-start" style="width: 90px;">
+                    <label asp-for="@Model.FirstOrDefault().FromName" class="control-label"></label>
+                </span>
+                <div class="flex-grow-1">
+                    <ol class="list-unstyled d-flex flex-wrap gap-2 mb-0" id="selectable">
+                        @foreach (var item in Model)
+                        {
+                            <li class="ui-state-default  px-3 py-1" data-id="@item.EvaluationId">@item.Year-@item.FromName-@item.Units</li>
+                        }
+                    </ol>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div id="more" class="btn btn-outline-primary btn-sm more-btn">更多</div>
+            </div>
+
+        </div>
+
     </div>
 
-
-    <div class="show col-12 card shadow-sm mt-2">
+    <div class="show col-12 card shadow-sm mt-2 p-0">
+        <div class="card-header-tab d-flex justify-content-end pe-3 ps-3 pt-3">
+            <button type="button" class="btn btn-success h2 m-0 hidden" id="output">Excel輸出</button>
+        </div>
         <div class="card-body">
             <div id="spreadsheet" class="scroll-container">
             </div>

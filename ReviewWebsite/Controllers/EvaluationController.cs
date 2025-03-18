@@ -63,9 +63,12 @@ namespace ReviewWebsite.Controllers
             var form = await _context.Form
               .Where(fh => fh.FormId == request.SelectedFromId)
               .FirstOrDefaultAsync();
-
+            if (form?.Data is null)
+            {
+                return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_400);
+            }
             //新增單位或是中心欄位
-            List<List<object>> lists = JsonSerializer.Deserialize<List<List<object>>>(form.Data);
+            List<List<object>> lists = JsonSerializer.Deserialize<List<List<object>>>(form.Data)?? [];
             for (int i = 0; i < request.SelectedUnits.Count; i++)
             {
                 var unit = request.SelectedUnits.ElementAt(i);
@@ -126,7 +129,7 @@ namespace ReviewWebsite.Controllers
                 catch (Exception ex)
                 {
                     await transaction.RollbackAsync();
-                    return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500);
+                    return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500, message: ex.Message);
                 }
             }
 
@@ -161,10 +164,17 @@ namespace ReviewWebsite.Controllers
                 {
 
                     var evaluation = await _context.Evaluation.FirstOrDefaultAsync(p => p.EvaluationId == viewModel.EvaluationId);
+                    if (evaluation == null) {
+                        throw new Exception("evaluation is null");
+                    }
                     evaluation.Data = viewModel.Data;
                     evaluation.UpdateTime = DateTime.Now;
 
                     var evaluationList = await _context.EvaluationList.FirstOrDefaultAsync(p => p.EvaluationId == viewModel.EvaluationId);
+                    if (evaluationList == null)
+                    {
+                        throw new Exception("evaluation is null");
+                    }
                     evaluationList.FromName = viewModel.FromName;
                     evaluationList.Year = viewModel.Year;
                     evaluationList.UpdateTime = DateTime.Now;
@@ -178,7 +188,7 @@ namespace ReviewWebsite.Controllers
                 {
                     // 若有錯誤，回滾交易
                     await transaction.RollbackAsync();
-                    return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500);
+                    return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500,message: ex.Message);
 
                 }
             }

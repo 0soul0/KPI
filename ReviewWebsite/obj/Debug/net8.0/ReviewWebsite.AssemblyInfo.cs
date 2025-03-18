@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReviewWebsite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9bd3b1881a8c8f7794f5545e69e1e5a287bf131")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb363df9d58ce9a1122f7498e9c1df3755ad2c9d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReviewWebsite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReviewWebsite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

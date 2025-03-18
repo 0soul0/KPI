@@ -1,0 +1,80 @@
+﻿#selectable .ui-selected {
+    background: #F39814 !important;
+    color: white !important;
+    border: 1px solid #F39814 !important;
+}
+
+#selectable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+    #selectable li {
+        margin: 3px;
+        padding: 3px 6px 3px 5px;
+        float: left;
+        font-size: 1em; /* 調整字體大小以適應橢圓 */
+        text-align: center;
+        border: 1px solid #808080;
+        border-radius: 50px 50px 50px 50px; /* 左右圓角，中間較長 */
+        background-color: transparent; /* 添加背景顏色，方便觀察效果 */
+    }
+
+.htBold {
+    font-weight: bold !important;
+}
+
+.htGray {
+    background-color: #d5d5d5 !important;
+}
+
+.scroll-container {
+    width: 100%; /* 設定容器寬度 */
+    height: auto;
+    overflow: auto; /* 垂直滾動 */
+    min-height: 90vh;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 8px;
+    position: relative;
+}
+
+    th.resizable {
+        position: relative;
+    }
+
+        th.resizable:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            cursor: col-resize;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+.rounded-border {
+    border: 2px solid black; /* Black border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 10px; /* Optional: adds padding inside the element */
+}
+
+#feedback {
+    font-size: 1.4em;
+}
+
+.portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+}

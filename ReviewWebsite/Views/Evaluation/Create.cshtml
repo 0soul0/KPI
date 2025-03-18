@@ -16,21 +16,24 @@
     <script src="~/js/common.js" asp-append-version="true"></script>
     <script src="~/js/evalution.js" asp-append-version="true"></script>
 }
-<div class="row ps-3 pe-3">
-    <div class="col-12 card shadow-sm">
-        <div class="card-header-tabs pt-2 d-flex justify-content-between align-items-center">
-            <span class="h2 mx-auto">@ViewData["Title"]</span>
+
+<div class="row">
+    <div class="col-12 card shadow-sm p-0">
+        <div class="card-header-tab d-flex justify-content-between pe-3 ps-3 pt-3">
+            <a asp-action="Index" type="button" class="btn btn-primary h2 " asp-controller="Form">返回</a>
+            <span class="h3 ms-3">@ViewData["Title"]</span>
+            <button type="button" class="btn btn-success h2 m-0" id="create">產生表單</button>
         </div>
-        <div class="card-body h6 pe-0 ps-0 mb-0">
+        <div class="card-body h6 pe-0 ps-3 mb-0">
             <div class="d-flex align-items-center mb-2">
                 <span class="flex-shrink-0 text-start" style="width: 90px;">
                     <label asp-for="SelectedUnits" class="control-label"></label>
                 </span>
                 <div class="flex-grow-1">
                     <ol class="list-unstyled d-flex flex-wrap gap-2 mb-0" id="selectable">
-                        @for (var i = 0; i < 10; i++)
-                        {
-                            <li class="ui-state-default px-3 py-1" data-id="@i">@i+"AAAA"</li>
+                        @foreach (var unit in Model.Units)
+                        {   
+                            <li class="ui-state-default px-3 py-1" data-id="@unit.UnitId">@unit.Name"</li>
                         }
                     </ol>
                 </div>
@@ -42,17 +45,18 @@
                 <select asp-for="SelectedFromId" class="form-select w-auto me-3"
                         asp-items="@(new SelectList(Model.FormList, nameof(FormList.FormId), nameof(FormList.Name)))">
                 </select>
-                <button id="create" type="button" class="btn btn-success">產生表單</button>
             </div>
 
         </div>
     </div>
-    <div class="col-12 card shadow-sm mt-2">
-        <div class="card-header-tabs pt-2 d-flex justify-content-between align-items-center">
-            <span class="h2 mx-auto"></span>
-            <button type="button" class="btn btn-success h2 me-3 d-none" id="save">存儲</button>
+
+
+    <div class="col-12 card shadow-sm p-0">
+        <div class="card-header-tab d-flex justify-content-between pb-0 pe-3 ps-3 pt-3">
+            <button type="button" class="btn btn-success h2 ms-auto" id="save">存儲</button>
         </div>
-        <div class="card-body h6 pe-0 ps-0 mb-0">
+
+        <div class="card-body">
             <div id="spreadsheet" class="scroll-container">
                 
             </div>

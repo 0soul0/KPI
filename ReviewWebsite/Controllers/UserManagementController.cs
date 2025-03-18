@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using ReviewWebsite.Data;
 using ReviewWebsite.Helpers;
 using ReviewWebsite.Models.Db;
@@ -18,38 +19,62 @@ namespace ReviewWebsite.Controllers
 
         public async Task<IActionResult> Index(String from = "user")
         {
-            var viewModel = new UserManagementViewModel
+            var viewModel = new UserManagementViewModel();
+
+            if (from == "unit")
             {
-                Users = await _context.User.ToListAsync(),
-                Units = await _context.Unit.ToListAsync()
-            };
+                viewModel.Units = await _context.Unit.ToListAsync();
+            }else{
+                viewModel.Users = await _context.User.ToListAsync();
+            }
             return this.ResolveView(nameof(Index), viewModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit([Bind("UserId,AccessRight")] User user)
+        [Consumes("application/json")]
+        public async Task<IActionResult> EditUser([FromBody] User User)
         {
+
+            if (User == null)
+            {
+                return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_400);
+            }
+
             try
             {
-                var orgUser = await _context.User.FirstAsync(m => m.UserId == user.UserId);
-                orgUser.AccessRight = user.AccessRight;
+                var orgUser = await _context.User.FirstAsync(m => m.UserId == User.UserId);
+                orgUser.AccessRight = User.AccessRight;
                 _context.Update(orgUser);
                 await _context.SaveChangesAsync();
+                return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_200);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return NotFound();
+                return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500, message: ex.Message);
             }
-            return RedirectToAction(nameof(Index), new { from = "user" });
         }
 
+
         [HttpPost]
-        public async Task<IActionResult> Create(Unit unit)
+        [Consumes("application/json")]
+        public async Task<IActionResult> CreateUnit([FromBody] Unit Unit)
         {
-            unit.UnitId = IdGenerator.GenerateUnitId();
-            _context.Add(unit);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index), new { from = "unit" });
+            if (Unit == null|| Unit.Name.IsNullOrEmpty())
+            {
+                return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_400);
+            }
+
+            try
+            {
+                Unit.UnitId = IdGenerator.GenerateUnitId();
+                _context.Add(Unit);
+                await _context.SaveChangesAsync();
+                return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_200);
+            }
+            catch (Exception ex)
+            {
+                return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_500, message: ex.Message);
+            }
         }
 
 

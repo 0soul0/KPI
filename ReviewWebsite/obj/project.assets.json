@@ -272,6 +272,18 @@
           }
         }
       },
+      "BootstrapIcons.AspNetCore/1.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/BootstrapIcons.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/BootstrapIcons.AspNetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -864,15 +876,6 @@
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
           }
-        }
-      },
-      "jQuery/3.7.1": {
-        "type": "package"
-      },
-      "jQuery.UI.Combined/1.14.1": {
-        "type": "package",
-        "dependencies": {
-          "jQuery": "1.14.1"
         }
       },
       "Microsoft.AspNetCore.Razor.Language/6.0.24": {
@@ -3114,6 +3117,19 @@
         "contentFiles/any/any/wwwroot/js/bootstrap.min.js.map"
       ]
     },
+    "BootstrapIcons.AspNetCore/1.11.0": {
+      "sha512": "KqU5oEyI+aehqTToBI7HnXtKuj27Kg+vJItkmunLZnf4ioy0BCjSW4CiKS0md92u+I5VJ+kAHxOnORp/4fx3sQ==",
+      "type": "package",
+      "path": "bootstrapicons.aspnetcore/1.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "bootstrapicons.aspnetcore.1.11.0.nupkg.sha512",
+        "bootstrapicons.aspnetcore.nuspec",
+        "lib/net5.0/BootstrapIcons.AspNetCore.dll"
+      ]
+    },
     "Humanizer/2.14.1": {
       "sha512": "/FUTD3cEceAAmJSCPN9+J+VhGwmL/C12jvwlyM1DFXShEMsBzvLzLqSrJ2rb+k/W2znKw7JyflZgZpyE+tI7lA==",
       "type": "package",
@@ -3858,88 +3874,6 @@
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
         "logo.png"
-      ]
-    },
-    "jQuery/3.7.1": {
-      "sha512": "rF8hnQxmBMlIspf8VN72bALtmIpKx6hKRpUdTOkp/8JzfF8KgNqHut5lOy9kFGvFIStumCqJ+PBxpI9gxpRYfQ==",
-      "type": "package",
-      "path": "jquery/3.7.1",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Content/Scripts/jquery-3.7.1-vsdoc.js",
-        "Content/Scripts/jquery-3.7.1.js",
-        "Content/Scripts/jquery-3.7.1.min.js",
-        "Content/Scripts/jquery-3.7.1.min.map",
-        "Content/Scripts/jquery-3.7.1.slim.js",
-        "Content/Scripts/jquery-3.7.1.slim.min.js",
-        "Content/Scripts/jquery-3.7.1.slim.min.map",
-        "Tools/common.ps1",
-        "Tools/install.ps1",
-        "Tools/jquery-3.7.1.intellisense.js",
-        "Tools/uninstall.ps1",
-        "jquery.3.7.1.nupkg.sha512",
-        "jquery.nuspec"
-      ]
-    },
-    "jQuery.UI.Combined/1.14.1": {
-      "sha512": "bnpmth39E3gBjwLy3nqWzD++GOdL74pcRWL86vo6CiY+M2jZyev5z17XV85R/j5m2+QuDzt1N2gsP0xFdi8x9g==",
-      "type": "package",
-      "path": "jquery.ui.combined/1.14.1",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Content/Content/themes/base/accordion.css",
-        "Content/Content/themes/base/all.css",
-        "Content/Content/themes/base/autocomplete.css",
-        "Content/Content/themes/base/base.css",
-        "Content/Content/themes/base/button.css",
-        "Content/Content/themes/base/core.css",
-        "Content/Content/themes/base/datepicker.css",
-        "Content/Content/themes/base/dialog.css",
-        "Content/Content/themes/base/draggable.css",
-        "Content/Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png",
-        "Content/Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png",
-        "Content/Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png",
-        "Content/Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png",
-        "Content/Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png",
-        "Content/Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png",
-        "Content/Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png",
-        "Content/Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png",
-        "Content/Content/themes/base/images/ui-icons_222222_256x240.png",
-        "Content/Content/themes/base/images/ui-icons_2e83ff_256x240.png",
-        "Content/Content/themes/base/images/ui-icons_444444_256x240.png",
-        "Content/Content/themes/base/images/ui-icons_454545_256x240.png",
-        "Content/Content/themes/base/images/ui-icons_555555_256x240.png",
-        "Content/Content/themes/base/images/ui-icons_777620_256x240.png",
-        "Content/Content/themes/base/images/ui-icons_777777_256x240.png",
-        "Content/Content/themes/base/images/ui-icons_888888_256x240.png",
-        "Content/Content/themes/base/images/ui-icons_cc0000_256x240.png",
-        "Content/Content/themes/base/images/ui-icons_cd0a0a_256x240.png",
-        "Content/Content/themes/base/images/ui-icons_ffffff_256x240.png",
-        "Content/Content/themes/base/jquery-ui.css",
-        "Content/Content/themes/base/jquery-ui.min.css",
-        "Content/Content/themes/base/menu.css",
-        "Content/Content/themes/base/progressbar.css",
-        "Content/Content/themes/base/resizable.css",
-        "Content/Content/themes/base/selectable.css",
-        "Content/Content/themes/base/selectmenu.css",
-        "Content/Content/themes/base/slider.css",
-        "Content/Content/themes/base/sortable.css",
-        "Content/Content/themes/base/spinner.css",
-        "Content/Content/themes/base/tabs.css",
-        "Content/Content/themes/base/theme.css",
-        "Content/Content/themes/base/tooltip.css",
-        "Content/Scripts/jquery-ui-1-14.1.js",
-        "Content/Scripts/jquery-ui-1.14.1.js",
-        "Content/Scripts/jquery-ui-1.14.1.min.js",
-        "Tools/common.ps1",
-        "Tools/install.ps1",
-        "Tools/uninstall.ps1",
-        "jquery.ui.combined.1.14.1.nupkg.sha512",
-        "jquery.ui.combined.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.24": {
@@ -8066,14 +8000,13 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "BootstrapIcons.AspNetCore >= 1.11.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.11",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.7",
       "X.PagedList >= 10.5.7",
       "X.PagedList.Mvc.Core >= 10.5.7",
-      "bootstrap >= 5.3.3",
-      "jQuery >= 3.7.1",
-      "jQuery.UI.Combined >= 1.14.1"
+      "bootstrap >= 5.3.3"
     ]
   },
   "packageFolders": {
@@ -8121,6 +8054,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "BootstrapIcons.AspNetCore": {
+            "target": "Package",
+            "version": "[1.11.0, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[8.0.11, )"
@@ -8146,14 +8083,6 @@
           "bootstrap": {
             "target": "Package",
             "version": "[5.3.3, )"
-          },
-          "jQuery": {
-            "target": "Package",
-            "version": "[3.7.1, )"
-          },
-          "jQuery.UI.Combined": {
-            "target": "Package",
-            "version": "[1.14.1, )"
           }
         },
         "imports": [

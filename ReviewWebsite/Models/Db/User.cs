@@ -28,6 +28,18 @@ namespace ReviewWebsite.Models.Db
         [DisplayName("生日")]
         [StringLength(10)] // 對應 NVARCHAR(10)
         public String? Birthday { get; set; }
+        [NotMapped]
+        public string FormattedBirthday
+        {
+            get
+            {
+                if (DateTime.TryParse(Birthday, out DateTime date))
+                {
+                    return date.ToString("yyyy-MM-dd");
+                }
+                return Birthday ?? ""; // 如果是 null，則回傳空字串
+            }
+        }
 
         [StringLength(50)] // 對應 NVARCHAR(50)
         public String? Location { get; set; }

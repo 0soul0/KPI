@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BootstrapIcons.AspNetCore": {
+              "target": "Package",
+              "version": "[1.11.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.11, )"
@@ -71,14 +75,6 @@
             "bootstrap": {
               "target": "Package",
               "version": "[5.3.3, )"
-            },
-            "jQuery": {
-              "target": "Package",
-              "version": "[3.7.1, )"
-            },
-            "jQuery.UI.Combined": {
-              "target": "Package",
-              "version": "[1.14.1, )"
             }
           },
           "imports": [

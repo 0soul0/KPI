@@ -14,6 +14,6 @@ namespace ReviewWebsite.Models.Db
 
         [DisplayName("單位或中心")]
         [StringLength(30)] // 對應 NVARCHAR(30)
-        public required String Name { get; set; }
+        public String? Name { get; set; }
     }
 }

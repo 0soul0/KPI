@@ -8,14 +8,13 @@
     ".NETCoreApp,Version=v8.0": {
       "ReviewWebsite/1.0.0": {
         "dependencies": {
+          "BootstrapIcons.AspNetCore": "1.11.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.11",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.11",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7",
           "X.PagedList": "10.5.7",
           "X.PagedList.Mvc.Core": "10.5.7",
-          "bootstrap": "5.3.3",
-          "jQuery": "3.7.1",
-          "jQuery.UI.Combined": "1.14.1"
+          "bootstrap": "5.3.3"
         },
         "runtime": {
           "ReviewWebsite.dll": {}
@@ -57,6 +56,14 @@
         }
       },
       "bootstrap/5.3.3": {},
+      "BootstrapIcons.AspNetCore/1.11.0": {
+        "runtime": {
+          "lib/net5.0/BootstrapIcons.AspNetCore.dll": {
+            "assemblyVersion": "1.11.0.0",
+            "fileVersion": "1.11.0.0"
+          }
+        }
+      },
       "Humanizer/2.14.1": {
         "dependencies": {
           "Humanizer.Core.af": "2.14.1",
@@ -595,12 +602,6 @@
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
           }
-        }
-      },
-      "jQuery/3.7.1": {},
-      "jQuery.UI.Combined/1.14.1": {
-        "dependencies": {
-          "jQuery": "3.7.1"
         }
       },
       "Microsoft.AspNetCore.Razor.Language/6.0.24": {
@@ -1962,6 +1963,13 @@
       "path": "bootstrap/5.3.3",
       "hashPath": "bootstrap.5.3.3.nupkg.sha512"
     },
+    "BootstrapIcons.AspNetCore/1.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KqU5oEyI+aehqTToBI7HnXtKuj27Kg+vJItkmunLZnf4ioy0BCjSW4CiKS0md92u+I5VJ+kAHxOnORp/4fx3sQ==",
+      "path": "bootstrapicons.aspnetcore/1.11.0",
+      "hashPath": "bootstrapicons.aspnetcore.1.11.0.nupkg.sha512"
+    },
     "Humanizer/2.14.1": {
       "type": "package",
       "serviceable": true,
@@ -2311,20 +2319,6 @@
       "sha512": "sha512-VIXB7HCUC34OoaGnO3HJVtSv2/wljPhjV7eKH4+TFPgQdJj2lvHNKY41Dtg0Bphu7X5UaXFR4zrYYyo+GNOjbA==",
       "path": "humanizer.core.zh-hant/2.14.1",
       "hashPath": "humanizer.core.zh-hant.2.14.1.nupkg.sha512"
-    },
-    "jQuery/3.7.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rF8hnQxmBMlIspf8VN72bALtmIpKx6hKRpUdTOkp/8JzfF8KgNqHut5lOy9kFGvFIStumCqJ+PBxpI9gxpRYfQ==",
-      "path": "jquery/3.7.1",
-      "hashPath": "jquery.3.7.1.nupkg.sha512"
-    },
-    "jQuery.UI.Combined/1.14.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-bnpmth39E3gBjwLy3nqWzD++GOdL74pcRWL86vo6CiY+M2jZyev5z17XV85R/j5m2+QuDzt1N2gsP0xFdi8x9g==",
-      "path": "jquery.ui.combined/1.14.1",
-      "hashPath": "jquery.ui.combined.1.14.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.24": {
       "type": "package",
