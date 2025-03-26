@@ -40,8 +40,13 @@ function loadAjax(type, href, data, onSuccess, onError, changeUrl = true) {
         //data: requestData,
         success: function (response) {
 
-            if (typeof onSuccess === 'function') {
-                onSuccess(response);
+            if (response.code == 200 || response.code==null) {
+                if (typeof onSuccess === 'function') {
+                    onSuccess(response);
+                }
+            } else {
+
+
             }
         },
         error: function (error) {
@@ -69,7 +74,13 @@ function dynamicLoadScriptsAndCss() {
     $("meta[name='dynamic-scripts']").each(function (index, element) {
         var script = $(element).data("src")
         if (script) {
-            $.getScript(script);
+            $.getScript(script)
+                .done(function () {
+                    log("腳本載入成功！");
+                })
+                .fail(function (jqxhr, settings, exception) {
+                    log(script+"載入失敗:" + exception);
+                });
         }
     });
 }

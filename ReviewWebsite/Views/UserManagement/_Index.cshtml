@@ -9,8 +9,8 @@
          { "3", "管理者" },
     };
 }
-<meta name="dynamic-styles" data-href="/css/feature/users_manage.css" />
-<meta name="dynamic-scripts" data-src="/js/feature/users_manage.js" />
+<meta name="dynamic-styles" data-href="css/feature/users_manage.css" />
+<meta name="dynamic-scripts" data-src="js/feature/users_manage.js" />
 
 <div class="card text-start">
     @if (Model.Users != null)
@@ -129,37 +129,60 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">使用者資訊</h5>
+                    <p class="modal-title h6" id="exampleModalLabel">使用者資訊</p>
                 </div>
-                <div class="modal-body"> 
+                <div class="modal-body">
                     <input asp-for="Users.FirstOrDefault().UserId" class="form-control" type="hidden" />
-                    <div class="form-group p-1">
-                        <label asp-for="Users.FirstOrDefault().Name" class="control-label"></label>
-                        <input asp-for="Users.FirstOrDefault().Name" class="form-control" disabled />
+
+
+                    <div class="inp">
+                        <input type="text" asp-for="Users.FirstOrDefault().Name" placeholder="&nbsp;">
+                        <span class="label animate">
+                            @Html.DisplayNameFor(model => model.Users.FirstOrDefault().Name)
+                        </span>
                     </div>
-                    <div class="form-group p-1">
-                        <label asp-for="Users.FirstOrDefault().Email" class="control-label"></label>
-                        <input asp-for="Users.FirstOrDefault().Email" class="form-control" disabled />
+
+                    <div class="inp">
+                        <input type="text" asp-for="Users.FirstOrDefault().Email" placeholder="&nbsp;" readonly>
+                        <span class="label animate">
+                            @Html.DisplayNameFor(model => model.Users.FirstOrDefault().Email)
+                        </span>
                     </div>
-                    <div class="form-group p-1">
-                        <label asp-for="Users.FirstOrDefault().Birthday" class="control-label"></label>
-                        <input asp-for="Users.FirstOrDefault().Birthday" class="form-control" disabled />
+
+                    <div class="inp">
+                        <input type="text" asp-for="Users.FirstOrDefault().Birthday" placeholder="&nbsp;" readonly>
+                        <span class="label animate">
+                            @Html.DisplayNameFor(model => model.Users.FirstOrDefault().Birthday)
+                        </span>
                     </div>
-                    <div class="form-group p-1">
-                        <label asp-for="Users.FirstOrDefault().Telephone" class="control-label"></label>
-                        <input asp-for="Users.FirstOrDefault().Telephone" class="form-control" disabled />
+
+                    <div class="inp">
+                        <input type="text" asp-for="Users.FirstOrDefault().Telephone" placeholder="&nbsp;" readonly>
+                        <span class="label animate">
+                            @Html.DisplayNameFor(model => model.Users.FirstOrDefault().Telephone)
+                        </span>
                     </div>
-                    <div class="form-group p-1">
-                        <label asp-for="Users.FirstOrDefault().AccessRight" class="control-label"></label>
-                        <select asp-for="Users.FirstOrDefault().AccessRight" class="form-control">
+
+                    <div class="inp">
+                        <input type="text" asp-for="Users.FirstOrDefault().Name" placeholder="&nbsp;" readonly>
+                        <span class="label animate">
+                            @Html.DisplayNameFor(model => model.Users.FirstOrDefault().Name)
+                        </span>
+                    </div>
+                    <div class="select inp" asp-for="Users.FirstOrDefault().AccessRight">
+                        <select asp-for="Users.FirstOrDefault().AccessRight">
                             @foreach (var option in accessRights)
                             {
                                 <option value="@option.Key">@option.Value</option>
                             }
                         </select>
+                        <i class="bi bi-caret-down-fill"></i>
+                        <span class="label">
+                            @Html.DisplayNameFor(model => model.Users.FirstOrDefault().AccessRight)
+                        </span>
                     </div>
                     <div class="form-group d-flex justify-content-end mt-3">
-                        <button id="submitUser" value="確定" class="btn btn-primary me-2" >確定</button>
+                        <button id="submitUser" value="確定" class="btn btn-primary me-2">確定</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
                     </div>
                 </div>
@@ -168,27 +191,29 @@
     </div>
 
 }
- else if (Model.Units != null)
- {
-     <div class="modal fade" id="addUnitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-             <div class="modal-content">
-                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">新增單位或中心</h5>
-                 </div>
-                 <div class="modal-body">
-                    <div class="form-group p-1">
-                        <label asp-for="Units.FirstOrDefault().Name" class="control-label"></label>
-                        <input asp-for="Units.FirstOrDefault().Name" class="form-control" value="" />
+else if (Model.Units != null)
+{
+    <div class="modal fade" id="addUnitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title h6" id="exampleModalLabel">新增單位或中心</p>
+                </div>
+                <div class="modal-body">
+                    <div class="inp">
+                        <input type="text" asp-for="Units.FirstOrDefault().Name" placeholder="&nbsp;" value="">
+                        <span class="label animate">
+                            @Html.DisplayNameFor(model => model.Units.FirstOrDefault().Name)
+                        </span>
                     </div>
                     <div class="form-group d-flex justify-content-end mt-3">
                         <button id="submitUnit" value="確定" class="btn btn-primary me-2">確定</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- }
+                </div>
+            </div>
+        </div>
+    </div>
+}
 
 

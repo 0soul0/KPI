@@ -5,6 +5,7 @@ using ReviewWebsite.Data;
 using ReviewWebsite.Helpers;
 using ReviewWebsite.Models.Db;
 using ReviewWebsite.Models.ViewModel;
+using ReviewWebsite.Models.ViewModel.Request;
 
 namespace ReviewWebsite.Controllers
 {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2XtUGK1xyE5ufOlAaVUw1pf5h5jzrrhZPiIZmWZ0IWg=",
+  "Hash": "n2HdFtixjdnTO3LHN9idq/TcJ1jlu1vtXnOtfwbG1Cs=",
   "Source": "ReviewWebsite",
   "BasePath": "_content/ReviewWebsite",
   "Mode": "Default",
@@ -188,12 +188,12 @@
       "OriginalItemSpec": "wwwroot\\css\\main.css"
     },
     {
-      "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\css\\untils\\utils.css",
+      "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\css\\utils\\tag_utils.css",
       "SourceId": "ReviewWebsite",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\",
       "BasePath": "_content/ReviewWebsite",
-      "RelativePath": "css/untils/utils.css",
+      "RelativePath": "css/utils/tag_utils.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -204,7 +204,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\untils\\utils.css"
+      "OriginalItemSpec": "wwwroot\\css\\utils\\tag_utils.css"
+    },
+    {
+      "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\css\\utils\\utils.css",
+      "SourceId": "ReviewWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\",
+      "BasePath": "_content/ReviewWebsite",
+      "RelativePath": "css/utils/utils.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\utils\\utils.css"
     },
     {
       "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\favicon.ico",

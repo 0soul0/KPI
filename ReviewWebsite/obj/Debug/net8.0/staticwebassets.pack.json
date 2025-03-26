@@ -33,8 +33,12 @@
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
-      "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\css\\untils\\utils.css",
-      "PackagePath": "staticwebassets\\css\\untils\\utils.css"
+      "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\css\\utils\\tag_utils.css",
+      "PackagePath": "staticwebassets\\css\\utils\\tag_utils.css"
+    },
+    {
+      "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\css\\utils\\utils.css",
+      "PackagePath": "staticwebassets\\css\\utils\\utils.css"
     },
     {
       "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\favicon.ico",

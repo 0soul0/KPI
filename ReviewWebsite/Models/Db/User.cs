@@ -9,7 +9,7 @@ namespace ReviewWebsite.Models.Db
     {
         [Key]
         [StringLength(15)] // 對應 NVARCHAR(15)
-        public required String UserId { get; set; } // 主鍵
+        public required string UserId { get; set; } // 主鍵
 
         [DisplayName("姓名")]
         [StringLength(30)] // 對應 NVARCHAR(30)
@@ -17,19 +17,19 @@ namespace ReviewWebsite.Models.Db
 
         [DisplayName("電子信箱")]
         [StringLength(30)] // 對應 NVARCHAR(30)
-        public required String Email { get; set; }
+        public string? Email { get; set; }
 
         [StringLength(20)] // 對應 NVARCHAR(20)
-        public required String Password { get; set; }
+        public string? Password { get; set; }
 
         [StringLength(10)] // 對應 NVARCHAR(10)
-        public String? Identification { get; set; }
+        public string? Identification { get; set; }
 
         [DisplayName("生日")]
         [StringLength(10)] // 對應 NVARCHAR(10)
-        public String? Birthday { get; set; }
+        public string? Birthday { get; set; }
         [NotMapped]
-        public string FormattedBirthday
+        public string? FormattedBirthday
         {
             get
             {
@@ -42,15 +42,15 @@ namespace ReviewWebsite.Models.Db
         }
 
         [StringLength(50)] // 對應 NVARCHAR(50)
-        public String? Location { get; set; }
+        public string? Location { get; set; }
 
         [DisplayName("手機")]
         [StringLength(10)] // 對應 NVARCHAR(10)
-        public String? Telephone { get; set; }
+        public string? Telephone { get; set; }
 
         [DisplayName("權限")]
         [StringLength(5)] // 對應 NVARCHAR(5)
-        public String? AccessRight { get; set; }
+        public string? AccessRight { get; set; }
 
 
     }

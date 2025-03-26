@@ -1,11 +1,11 @@
 ﻿
 
 $(function () {
+    log("Loading users_manage.js success")
     bindEvent();
-    dealUrlFrom();
+    //dealUrlFrom();
     createUserOrUnitTable();
 });
-
 
 function createUserOrUnitTable() {
     if ($("#userTable").is("*")) {
@@ -16,12 +16,12 @@ function createUserOrUnitTable() {
 
 }
 
-function dealUrlFrom() {
-    var urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('from') == "unit") {
-        $("#unit-btn").trigger('click');
-    }
-}
+//function dealUrlFrom() {
+//    var urlParams = new URLSearchParams(window.location.search);
+//    if (urlParams.get('from') == "unit") {
+//        $("#unit-btn").trigger('click');
+//    }
+//}
 
 function bindEvent() {
     $("#userInfoModal").on('show.bs.modal', function (event) {
@@ -35,52 +35,39 @@ function bindEvent() {
         $("#Telephone").val(userInfo.get(4).textContent.trim());
         $("#AccessRight").val(userInfo.get(5).dataset.accessNumber);
     });
-
     $("#submitUser").on('click', function () {
-        var user = {
-            "UserId": $("#UserId").val(),
-            "AccessRight": $("#AccessRight").val(),
-        }
         loadAjax(
             'POST',
-            getCurrentHref() + "/EditUser" +,
+            getCurrentHref() + "/EditUser" ,
             {
-                "User": user
+                "UserId": $("#UserId").val(),
+                "AccessRight": $("#AccessRight").val(),
             },
             function (response) {   // 自定义错误处理
-                // 插入內容
-                history.pushState(null, '', href);
-                $('#body-content').html(response);
-                dynamicLoadScriptsAndCss()
+                $('#userInfoModal').modal('hide')
+                location.reload()
             },
             function (error) {   // 自定义错误处理
                 console.log("error:" + error)
             }
         )
     })
-
     $("#submitUnit").on('click', function () {
 
-        var unit = {
-            "Name": $("#Name").val()
-        }
-
         loadAjax(
             'POST',
-            getCurrentHref()+"/CreateUnit"+,
-            {
-                "Unit": unit
+            getCurrentHref()+"/CreateUnit",
+            {   
+                "UnitId":"",
+                "Name": $("#Name").val()
             },
             function (response) {   // 自定义错误处理
-                // 插入內容
-                history.pushState(null, '', href);
-                $('#body-content').html(response);
-                dynamicLoadScriptsAndCss()
+                $('#addUnitModal').modal('hide')
+                location.reload()
             },
             function (error) {   // 自定义错误处理
                 console.log("error:" + error)
             }
         )
     })
-
 }

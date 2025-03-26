@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\wwwroot\\js\\feature\\users_manage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\wwwroot\\js\\feature\\users_manage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\views\\usermanagement\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\views\\usermanagement\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\wwwroot\\js\\layout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\wwwroot\\js\\layout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\wwwroot\\js\\utils\\utils.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\wwwroot\\js\\utils\\utils.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|c:\\users\\bill.liu\\desktop\\project\\web\\reviewwebsite\\reviewwebsite\\wwwroot\\js\\feature\\users_manage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B0C86DC9-54F7-48CD-BEE6-F2355BBB1774}|ReviewWebsite\\ReviewWebsite.csproj|solutionrelative:reviewwebsite\\wwwroot\\js\\feature\\users_manage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,45 +22,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "utils.js",
-              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\utils\\utils.js",
-              "RelativeDocumentMoniker": "ReviewWebsite\\wwwroot\\js\\utils\\utils.js",
-              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\utils\\utils.js",
-              "RelativeToolTip": "ReviewWebsite\\wwwroot\\js\\utils\\utils.js",
-              "ViewState": "AgIAADgAAAAAAAAAAAAwwFoAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-03-17T10:09:58.115Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "layout.js",
-              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\layout.js",
-              "RelativeDocumentMoniker": "ReviewWebsite\\wwwroot\\js\\layout.js",
-              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\layout.js",
-              "RelativeToolTip": "ReviewWebsite\\wwwroot\\js\\layout.js",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-03-17T10:04:56.814Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "users_manage.js",
-              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\users_manage.js",
-              "RelativeDocumentMoniker": "ReviewWebsite\\wwwroot\\js\\feature\\users_manage.js",
-              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\users_manage.js",
-              "RelativeToolTip": "ReviewWebsite\\wwwroot\\js\\feature\\users_manage.js",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAD0AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-03-17T10:00:27.213Z",
+              "Title": "_Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Views\\UserManagement\\_Index.cshtml",
+              "RelativeDocumentMoniker": "ReviewWebsite\\Views\\UserManagement\\_Index.cshtml",
+              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Views\\UserManagement\\_Index.cshtml",
+              "RelativeToolTip": "ReviewWebsite\\Views\\UserManagement\\_Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAIMAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T06:10:29.714Z",
               "EditorCaption": ""
             },
             {
@@ -75,9 +45,22 @@
               "RelativeDocumentMoniker": "ReviewWebsite\\Controllers\\UserManagementController.cs",
               "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\Controllers\\UserManagementController.cs",
               "RelativeToolTip": "ReviewWebsite\\Controllers\\UserManagementController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAiwEUAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAwwDwAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T09:39:05.906Z",
+              "WhenOpened": "2025-03-26T04:02:50.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "users_manage.js",
+              "DocumentMoniker": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\users_manage.js",
+              "RelativeDocumentMoniker": "ReviewWebsite\\wwwroot\\js\\feature\\users_manage.js",
+              "ToolTip": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\users_manage.js",
+              "RelativeToolTip": "ReviewWebsite\\wwwroot\\js\\feature\\users_manage.js",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwDwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-03-26T04:01:55.052Z",
               "EditorCaption": ""
             }
           ]
