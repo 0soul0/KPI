@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n2HdFtixjdnTO3LHN9idq/TcJ1jlu1vtXnOtfwbG1Cs=",
+  "Hash": "FNWizEBsVAsde0t+ivUtTdyItTzwfUhXIe16OOYUn6M=",
   "Source": "ReviewWebsite",
   "BasePath": "_content/ReviewWebsite",
   "Mode": "Default",
@@ -245,12 +245,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\evalution.js",
+      "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\evalution\\create_edit.js",
       "SourceId": "ReviewWebsite",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\",
       "BasePath": "_content/ReviewWebsite",
-      "RelativePath": "js/feature/evalution.js",
+      "RelativePath": "js/feature/evalution/create_edit.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -261,7 +261,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\feature\\evalution.js"
+      "OriginalItemSpec": "wwwroot\\js\\feature\\evalution\\create_edit.js"
+    },
+    {
+      "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\evalution\\index.js",
+      "SourceId": "ReviewWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\",
+      "BasePath": "_content/ReviewWebsite",
+      "RelativePath": "js/feature/evalution/index.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\feature\\evalution\\index.js"
     },
     {
       "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\form\\create_edit.js",
@@ -283,12 +302,12 @@
       "OriginalItemSpec": "wwwroot\\js\\feature\\form\\create_edit.js"
     },
     {
-      "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\form\\form.js",
+      "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\form\\index.js",
       "SourceId": "ReviewWebsite",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\",
       "BasePath": "_content/ReviewWebsite",
-      "RelativePath": "js/feature/form/form.js",
+      "RelativePath": "js/feature/form/index.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -299,7 +318,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\feature\\form\\form.js"
+      "OriginalItemSpec": "wwwroot\\js\\feature\\form\\index.js"
     },
     {
       "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\report.js",

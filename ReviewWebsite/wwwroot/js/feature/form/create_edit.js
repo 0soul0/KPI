@@ -1,15 +1,63 @@
-﻿$(function () {
+﻿var hotTable = null;
+let itemTxtToViewMap = {};
+let hotTableData = null;
+//let itemTxtToId = {};
+$(function () {
+    cacheData();
     bindEvent();
-    createTable($.parseJSON($("#Data").text()), 'spreadsheet');
+    initExcelTable();
     createPrettyTable('#formTable');
 });
 
+function cacheData() {
+    $(".selectable_item").each(function () {
+        var key = $(this).data("id")
+        var value = $(this).text()
+        itemTxtToViewMap[value] = this
+    });
+    hotTableData=$.parseJSON($("#Data").text())
+}
+
+function initExcelTable() {
+    var selectedCell = null;
+    hotTable = createExcelTable(hotTableData, 'spreadsheet', afterRender = function (changes, source) {
+        $(".select_kpi").attr("data-bs-toggle", "modal").attr("data-bs-target", "#selectUnitModal");
+    }, onCreateDone = function (hot) {
+
+        $("#selectUnitModal").on('show.bs.modal', function (event) {
+            //selectedCell = $(event.relatedTarget);
+            $(".selectable_item").removeClass("selected_item")
+            selectedCell = hotTable.getSelected()
+            var units = hotTable.getDataAtCell(selectedCell[0][0], selectedCell[0][1])
+            if (units != null) {
+                units.trim().split(",").forEach(function (value, index) {
+                    $(itemTxtToViewMap[value]).addClass("selected_item")
+                })
+            }
+
+        });
+    });
+
+    $("#confirmUnit").on('click', function () {
+        if (!selectedCell) return
+        var strUnits = $(".selected_item").map(function () {
+            return $(this).text();
+        }).get().join(",");
+        //var maxItemsPerLine = 3; // 每行最多 3 個
+        //var formattedText = strUnits.map((item, index) => {
+        //    return (index > 0 && index % maxItemsPerLine === 0) ? "\n" + item : item;
+        //}).join(",");
+        hotTable.setDataAtCell(selectedCell[0][0], selectedCell[0][1], strUnits)
+        $('#selectUnitModal').modal('hide');
+    })
+}
+
 function bindEvent() {
     $("#save").on('click', function () {
-        
+
         var data = handsontable.getData()
 
-        let href = "/" + $(location).attr('href').split("/").slice(3, 5).join("/")
+        let href = getCurrentHref()
         loadAjax(
             'POST',
             href,

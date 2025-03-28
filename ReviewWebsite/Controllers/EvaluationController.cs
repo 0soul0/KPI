@@ -44,7 +44,7 @@ namespace ReviewWebsite.Controllers
                 Units = await _context.Unit.ToListAsync()
             };
             ViewData["Title"] = "新增評鑑表單";
-            return View(model);
+            return View("CreateOrEdit", model);
         }
 
         [HttpPost]
@@ -76,7 +76,7 @@ namespace ReviewWebsite.Controllers
                 {
                     if (j == 1)
                     {
-                        lists[j].Add(unit.Name);
+                        lists[j].Add(unit.Name+ "評分");
                     }
                     else
                     {
@@ -85,6 +85,7 @@ namespace ReviewWebsite.Controllers
                 }
             }
             form.Data = JsonSerializer.Serialize(lists);
+            form.Units = request.SelectedUnits;
 
             return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_200, data: JsonSerializer.Serialize(form));
         }
@@ -144,9 +145,14 @@ namespace ReviewWebsite.Controllers
             {
                 return RedirectToAction(nameof(Index));
             }
-            var evaluation = await _context.Evaluation.FirstOrDefaultAsync(m => m.EvaluationId == id);
+            var model = new EvaluationCreateOrEditViewModel
+            {
+                FormList = await _context.FormList.ToListAsync(),
+                Units = await _context.Unit.ToListAsync(),
+                Evaluation = await _context.Evaluation.FirstOrDefaultAsync(m => m.EvaluationId == id)
+            };
             ViewData["Title"] = "評鑑表單";
-            return View(evaluation);
+            return View("CreateOrEdit", model);
         }
 
         [HttpPost]

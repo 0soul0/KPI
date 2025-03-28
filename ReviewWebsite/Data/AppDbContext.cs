@@ -21,5 +21,15 @@ namespace ReviewWebsite.Data
         public DbSet<Form> Form { get; set; } = default!;
         public DbSet<EvaluationList> EvaluationList { get; set; } = default!;
         public DbSet<Evaluation> Evaluation { get; set; } = default!;
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // 設定外鍵關係
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.Unit)
+                .WithMany(u => u.Users)
+                .HasForeignKey(u => u.UnitId);
+        }
     }
 }

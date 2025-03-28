@@ -92,7 +92,7 @@
     .select i {
         position: absolute;
         right: 12px;
-        top: calc(60% - 3px);
+        top: calc(33% - 3px);
         width: 10px;
         height: 6px;
         stroke-width: 2px;
@@ -114,7 +114,7 @@
         cursor: pointer;
         font-family: inherit;
         font-size: 16px;
-        margin-top: 25px;
+        /*margin-top: 25px;*/
         transition: all 150ms ease;
     }
 

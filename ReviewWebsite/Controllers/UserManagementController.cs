@@ -5,8 +5,9 @@ using ReviewWebsite.Data;
 using ReviewWebsite.Helpers;
 using ReviewWebsite.Models.Db;
 using ReviewWebsite.Models.ViewModel;
-using ReviewWebsite.Models.ViewModel.Request;
-
+using ReviewWebsite.Utils;
+using System.Text;
+using System.Text.Json;
 namespace ReviewWebsite.Controllers
 {
     public class UserManagementController : Controller
@@ -25,9 +26,19 @@ namespace ReviewWebsite.Controllers
             if (from == "unit")
             {
                 viewModel.Units = await _context.Unit.ToListAsync();
-            }else{
-                viewModel.Users = await _context.User.ToListAsync();
             }
+            else
+            {
+                viewModel.Users =  await _context.User
+                    .Include(u => u.Unit) 
+                    .ToListAsync();
+                byte[] byteArray = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(viewModel.Users[0]));
+                string base64String = Convert.ToBase64String(byteArray);
+                //測試使用者
+                Cookie.SetCookie(Response, "token", base64String);
+                
+            }
+         
             return this.ResolveView(nameof(Index), viewModel);
         }
 
@@ -60,7 +71,7 @@ namespace ReviewWebsite.Controllers
         [Consumes("application/json")]
         public async Task<IActionResult> CreateUnit([FromBody] Unit Unit)
         {
-            if (Unit == null|| Unit.Name.IsNullOrEmpty())
+            if (Unit == null || Unit.Name.IsNullOrEmpty())
             {
                 return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_400);
             }

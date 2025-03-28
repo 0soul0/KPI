@@ -52,7 +52,7 @@ namespace ReviewWebsite.Controllers
                 };
             }
             ViewData["Title"] = "新建表單";
-
+            ViewData["Units"] = await _context.Unit.ToListAsync();
             return View("CreateOrEdit", form);
         }
 

@@ -14,5 +14,7 @@ namespace ReviewWebsite.Models.Db
 
         public String Data { get; set; }
 
+        [NotMapped]
+        public ICollection<Unit>? Units { get; set; }
     }
 }

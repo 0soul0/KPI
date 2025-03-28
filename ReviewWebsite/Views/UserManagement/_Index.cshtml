@@ -9,8 +9,8 @@
          { "3", "管理者" },
     };
 }
-<meta name="dynamic-styles" data-href="css/feature/users_manage.css" />
-<meta name="dynamic-scripts" data-src="js/feature/users_manage.js" />
+<meta name="dynamic-styles" data-href="/css/feature/users_manage.css" />
+<meta name="dynamic-scripts" data-src="/js/feature/users_manage.js" />
 
 <div class="card text-start">
     @if (Model.Users != null)
@@ -23,7 +23,7 @@
                             #
                         </th>
                         <th scope="col">
-                            @Html.DisplayNameFor(model => model.Users.First().Name)
+                            @Html.DisplayNameFor(model => model.Users.First().FullName)
                         </th>
                         <th scope="col">
                             @Html.DisplayNameFor(model => model.Users.First().Email)
@@ -33,6 +33,9 @@
                         </th>
                         <th scope="col">
                             @Html.DisplayNameFor(model => model.Users.First().Telephone)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Users.First().Unit.Name)
                         </th>
                         <th scope="col">
                             @Html.DisplayNameFor(model => model.Users.First().AccessRight)
@@ -52,7 +55,7 @@
                                     @indexUser
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Name)
+                                    @Html.DisplayFor(modelItem => item.FullName)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Email)
@@ -62,6 +65,9 @@
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Telephone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Unit.Name)
                                 </td>
                                 <td data-access-number="@item.AccessRight">
                                     @accessRights.GetValueOrDefault(item.AccessRight, "一般人")
@@ -136,9 +142,9 @@
 
 
                     <div class="inp">
-                        <input type="text" asp-for="Users.FirstOrDefault().Name" placeholder="&nbsp;">
+                        <input type="text" asp-for="Users.FirstOrDefault().FullName" placeholder="&nbsp;">
                         <span class="label animate">
-                            @Html.DisplayNameFor(model => model.Users.FirstOrDefault().Name)
+                            @Html.DisplayNameFor(model => model.Users.FirstOrDefault().FullName)
                         </span>
                     </div>
 
@@ -164,23 +170,26 @@
                     </div>
 
                     <div class="inp">
-                        <input type="text" asp-for="Users.FirstOrDefault().Name" placeholder="&nbsp;" readonly>
+                        <input type="text" asp-for="Users.FirstOrDefault().FullName" placeholder="&nbsp;" readonly>
                         <span class="label animate">
-                            @Html.DisplayNameFor(model => model.Users.FirstOrDefault().Name)
+                            @Html.DisplayNameFor(model => model.Users.FirstOrDefault().FullName)
                         </span>
                     </div>
-                    <div class="select inp" asp-for="Users.FirstOrDefault().AccessRight">
-                        <select asp-for="Users.FirstOrDefault().AccessRight">
-                            @foreach (var option in accessRights)
-                            {
-                                <option value="@option.Key">@option.Value</option>
-                            }
-                        </select>
-                        <i class="bi bi-caret-down-fill"></i>
+                    <div class="inp">
+                        <div class="select" style="margin-top:25px">
+                            <select asp-for="Users.FirstOrDefault().AccessRight">
+                                @foreach (var option in accessRights)
+                                {
+                                    <option value="@option.Key">@option.Value</option>
+                                }
+                            </select>
+                            <i class="bi bi-caret-down-fill"></i>
+                        </div>
                         <span class="label">
                             @Html.DisplayNameFor(model => model.Users.FirstOrDefault().AccessRight)
                         </span>
                     </div>
+                   
                     <div class="form-group d-flex justify-content-end mt-3">
                         <button id="submitUser" value="確定" class="btn btn-primary me-2">確定</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>

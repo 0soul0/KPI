@@ -31,17 +31,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
-    @Html.Partial("LoadCSS")
+    @await Html.PartialAsync("LoadCSS")
     @await RenderSectionAsync("Css", required: false)
 </head>
 <body>
 
     <main role="main" class="h6">
         @* sidebar *@
-        <div class="container-fluid">
+        <div class="container-fluid bg-light">
             <div class="row">
                 <div class="col-2 m-0 p-0" style="height:100%">
-                    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="height:100%">
+                    <div class="d-flex flex-column flex-shrink-0 p-3" style="height:100%">
                         <p class="h5">
                             功能列表
                         </p>
@@ -60,20 +60,23 @@
                 <div id="content-area" class="col-10 m-0 p-0">
                     @* head *@
                     <div id="body-header">
-                        <nav class="navbar navbar-light bg-light">
+                        <nav class="navbar navbar-light">
                             <div class="container-fluid p-0">
                                 <a class="navbar-brand" href="#">
                                     @* <img src="/assets/user.png" alt="" width="30" height="30" class="d-inline-block align-text-top"> *@
                                     logo
                                 </a>
-                                <div class="d-flex align-items-center dropdown">
-                                    <span class="h6 mb-0">嗨,會員</span>
-                                    <a class="nav-link dropdown-toggle p-1" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="/assets/user.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
-                                    </a>
-                                    <ul class="dropdown-menu p-0 me-2" aria-labelledby="navbarDropdown">
-                                        <li><span class="dropdown-item h6" href="#">登出</span></li>
-                                    </ul>
+                                <div class="d-flex align-items-center">
+                                    <span id="userName" class="h6 mb-0 me-1">嗨,會員</span>
+                                    <div class="dropdown">
+                                        <a class="nav-link align-items-center dropdown-toggle p-1" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img src="/assets/user.png" alt="" width="30" height="30" class="">
+                                            <i class="d-inline-block m-0"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end p-1" aria-labelledby="navbarDropdown">
+                                            <li><span id="logOut" class="dropdown-item h6 m-0" href="#">登出</span></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </nav>
@@ -88,11 +91,10 @@
     </main>
     <footer class="border-top footer text-muted">
         <div class="container">
-            Manage
         </div>
     </footer>
 
-    @Html.Partial("LoadJS")
+    @await Html.PartialAsync("LoadJS")
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

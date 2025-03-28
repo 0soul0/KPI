@@ -13,5 +13,7 @@ namespace ReviewWebsite.Models.ViewModel
 
         public List<FormList> FormList { get; set; }
 
+        public Evaluation? Evaluation { get; set; }
+
     }
 }

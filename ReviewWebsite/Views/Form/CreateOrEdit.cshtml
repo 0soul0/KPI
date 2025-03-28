@@ -1,16 +1,16 @@
-﻿@model ReviewWebsite.Models.Db.Form
+﻿@using ReviewWebsite.Models.Db
+@model ReviewWebsite.Models.Db.Form
+
 @{
     Layout = "_Layout";
+    List<Unit> units = ViewData["Units"] as List<Unit> ?? new List<Unit>();
 }
 @section Css {
-    <link rel="stylesheet" href="~/css/common.css" />
-    <link rel="stylesheet" href="~/css/form.css" />
+    <link rel="stylesheet" href="~/css/feature/form.css" />
 }
 
 @section Scripts {
-    <script src="~/js/common.js" asp-append-version="true"></script>
-    <script src="~/js/handsontable.js" asp-append-version="true"></script>
-    <script src="~/js/form_create_edit.js" asp-append-version="true"></script>
+    <script src="~/js/feature/form/create_edit.js" asp-append-version="true"></script>
 }
 <div>
     <span id="FormId" hidden>@Model.FormId</span>
@@ -19,10 +19,33 @@
 <div class="card shadow-sm">
     <div class="card-header-tab d-flex justify-content-between pe-3 ps-3 pt-3">
         <a asp-action="Index" type="button" class="btn btn-primary h2 m-0" asp-controller="Form">返回</a>
-        <span class="h3 m-0">@ViewData["Title"]</span>
+        <span class="h5 m-0">@ViewData["Title"]</span>
         <button type="button" class="btn btn-success h2 m-0" id="save">存儲</button>
     </div>
     <div class="card-body">
         <div id="spreadsheet" class="scroll-container"></div>
+    </div>
+</div>
+
+@* model *@
+<div class="modal fade" id="selectUnitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title h6" id="exampleModalLabel">KPI連動</p>
+            </div>
+            <div class="modal-body">
+                <ul id="buttonContainer" class="d-flex flex-wrap gap-2">
+                    @for (int i = 0; i < units.Count(); i++)
+                    {
+                        <li class="selectable_item" data-id="@units[i].UnitId">@units[i].Name</li>
+                    }
+                </ul>
+                <div class="form-group d-flex justify-content-end mt-3">
+                    <button id="confirmUnit" value="確定" class="btn btn-primary me-2">確定</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

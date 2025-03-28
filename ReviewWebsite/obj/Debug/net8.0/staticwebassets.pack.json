@@ -45,16 +45,20 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\evalution.js",
-      "PackagePath": "staticwebassets\\js\\feature\\evalution.js"
+      "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\evalution\\create_edit.js",
+      "PackagePath": "staticwebassets\\js\\feature\\evalution\\create_edit.js"
+    },
+    {
+      "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\evalution\\index.js",
+      "PackagePath": "staticwebassets\\js\\feature\\evalution\\index.js"
     },
     {
       "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\form\\create_edit.js",
       "PackagePath": "staticwebassets\\js\\feature\\form\\create_edit.js"
     },
     {
-      "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\form\\form.js",
-      "PackagePath": "staticwebassets\\js\\feature\\form\\form.js"
+      "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\form\\index.js",
+      "PackagePath": "staticwebassets\\js\\feature\\form\\index.js"
     },
     {
       "Id": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\js\\feature\\report.js",

@@ -33,7 +33,7 @@
     width: 100%; /* 設定容器寬度 */
     height: auto;
     overflow: auto; /* 垂直滾動 */
-    min-height: 90vh;
+    min-height: 85vh;
 }
 
 table {

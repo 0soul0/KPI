@@ -1,21 +1,20 @@
 ﻿$(function () {
     bindEvent();
-    createPrettyTable('#evaluationTable');
+    getOrCheckEdit();
 });
-
 function bindEvent() {
 
     let selectedUnits = []
-    $("#create").on('click', function () {
+    $("#createTable").on('click', function () {
 
-        selectedUnits = $(".ui-selected").map((_, el) => ({
+        selectedUnits = $(".selected_item").map((_, el) => ({
             UnitId: String($(el).data('id')),
             Name: $(el).text()
         })).get();
         if (selectedUnits.length === 0) return alert("請選擇單位或是中心")
         let selectedFromId = $("select[name='SelectedFromId']").val();
         if (selectedFromId == "") return alert("請選擇表單")
-        let href = "/" + $(location).attr('href').split("/").slice(3, 4).join("/") + "/CreateFrom"
+        let href = getCurrentHref().replace("Create", "CreateFrom")
         log(href)
 
         loadAjax(
@@ -27,10 +26,10 @@ function bindEvent() {
             },
             function (response) {   // 自定义错误处理
                 if (response.code == 200) {
-                    log(response.data)
+                    ss = response
                     var model = $.parseJSON(response.data)
-                    createTable($.parseJSON(model.Data), "spreadsheet")
-                    $("#save").removeClass("d-none")
+                    var unitsLen = model.Units.length + 1
+                    createEvalutionTable($.parseJSON(model.Data))
                 }
                 log(response)
             },
@@ -44,7 +43,7 @@ function bindEvent() {
 
         var data = handsontable.getData()
         var units = selectedUnits.map(unit => unit.Name).join(",")
-        let href = "/" + $(location).attr('href').split("/").slice(3, 5).join("/")
+        let href = getCurrentHref()
         loadAjax(
             'POST',
             href,
@@ -56,7 +55,7 @@ function bindEvent() {
                 "Units": units
                 //"EvaluationId": $("#FormId").text().trim()
             },
-            function (response) {   // 自定义错误处理
+            function (response) {
                 if (response.code == 200) {
                     window.location = window.location.origin + "/Evaluation/Index"
                 }
@@ -70,6 +69,25 @@ function bindEvent() {
     })
 }
 
-function getFormTable() {
-    createTable($.parseJSON($("#Data").text()), 'spreadsheet');
+function getOrCheckEdit() {
+    if ($("#Data").is("*")) {
+        createEvalutionTable($.parseJSON($("#Data").text()))
+    }
+}
+
+function createEvalutionTable(data) {
+    createExcelTable(data, 'spreadsheet', afterRender = function (changes) {
+
+    }, onCreateDone = function (hot) {
+        //for (let row = 0; row < hot.countRows(); row++) {
+        //    var colLen = hot.countCols()
+        //    if (row != 0 || row !== 1) {
+        //        colLen -= unitsLen
+        //    }
+        //    for (let col = 0; col < colLen; col++) {
+        //        hot.setCellMeta(row, col, 'readOnly', true);
+        //    }
+        //}
+    });
+    $("#excelTable").show()
 }

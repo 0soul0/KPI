@@ -13,7 +13,7 @@ namespace ReviewWebsite.Models.Db
 
         [DisplayName("姓名")]
         [StringLength(30)] // 對應 NVARCHAR(30)
-        public string? Name { get; set; }
+        public string? FullName { get; set; }
 
         [DisplayName("電子信箱")]
         [StringLength(30)] // 對應 NVARCHAR(30)
@@ -51,7 +51,9 @@ namespace ReviewWebsite.Models.Db
         [DisplayName("權限")]
         [StringLength(5)] // 對應 NVARCHAR(5)
         public string? AccessRight { get; set; }
-
+        // 外鍵
+        public required String UnitId { get; set; }
+        public virtual Unit Unit { get; set; }
 
     }
 }

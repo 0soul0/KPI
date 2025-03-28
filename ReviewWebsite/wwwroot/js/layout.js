@@ -1,5 +1,7 @@
 ﻿$(function () {
+    setSetting();
     bindSideBarEvent();
+    bindCompentEvent();
     // 处理浏览器前进/后退按钮
     window.addEventListener("popstate", function () {
         const href = window.location.pathname;
@@ -37,4 +39,26 @@ function bindSideBarEvent() {
             )
         });
     });
+}
+
+function bindCompentEvent() {
+    $(".selectable_item").on('click', function () {
+        $(this).toggleClass("selected_item");
+
+    });
+
+    $("#toggle").on('click', function () {
+        $(this).toggleClass("rotated");
+    })
+}
+
+function setSetting() {
+    if ($.cookie('token') != "") {
+        var user = $.parseJSON(atob($.cookie('token')))
+        $("#userName").text("嗨," + user.FullName)
+    }
+    $("#logOut").on('click', function () {
+        $.cookie('token', '')
+        location.reload()
+    })
 }
