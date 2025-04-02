@@ -56,7 +56,6 @@ function bindEvent() {
                 if (response.code == 200) {
                     createEvalutionTable($.parseJSON(response.data), "spreadsheet")
                 }
-                log(response)
             },
             function (error) {   // 自定义错误处理
                 log(error)
@@ -71,6 +70,7 @@ function bindEvent() {
 
 
 function createEvalutionTable(data) {
+    $("#excelTable").show()
     hot = createExcelTable(data, 'spreadsheet', afterRender = function (changes) {
 
     }, onCreateDone = function (hot) {
@@ -82,7 +82,6 @@ function createEvalutionTable(data) {
         const mergePlugin = hot.getPlugin("mergeCells");
         mergePlugin.merge(0, 1, 0, 2);
     });
-    $("#excelTable").show()
 }
 
 function exportExcel() {

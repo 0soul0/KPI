@@ -1,4 +1,5 @@
-﻿$(function () {
+﻿var user=null
+$(function () {
     setSetting();
     bindSideBarEvent();
     bindCompentEvent();
@@ -54,11 +55,12 @@ function bindCompentEvent() {
 
 function setSetting() {
     if ($.cookie('token') != "") {
-        var user = $.parseJSON(atob($.cookie('token')))
+        user = $.parseJSON(atob($.cookie('token')))
         $("#userName").text("嗨," + user.FullName)
     }
     $("#logOut").on('click', function () {
         $.cookie('token', '')
+        user=""
         location.reload()
     })
 }

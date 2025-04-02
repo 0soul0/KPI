@@ -29,7 +29,7 @@ function bindEvent() {
                     ss = response
                     var model = $.parseJSON(response.data)
                     var unitsLen = model.Units.length + 1
-                    createEvalutionTable($.parseJSON(model.Data))
+                    createEvalutionTable($.parseJSON(model.Data), unitsLen)
                 }
                 log(response)
             },
@@ -71,23 +71,33 @@ function bindEvent() {
 
 function getOrCheckEdit() {
     if ($("#Data").is("*")) {
-        createEvalutionTable($.parseJSON($("#Data").text()))
+        var data = $.parseJSON($("#Data").text())
+        createEvalutionTable(data, data[0].length-6)
     }
 }
 
-function createEvalutionTable(data) {
+function createEvalutionTable(data, unitsLen) {
+    $("#excelTable").show()
     createExcelTable(data, 'spreadsheet', afterRender = function (changes) {
 
     }, onCreateDone = function (hot) {
-        //for (let row = 0; row < hot.countRows(); row++) {
-        //    var colLen = hot.countCols()
-        //    if (row != 0 || row !== 1) {
-        //        colLen -= unitsLen
-        //    }
-        //    for (let col = 0; col < colLen; col++) {
-        //        hot.setCellMeta(row, col, 'readOnly', true);
-        //    }
-        //}
+        for (let row = 0; row < hot.countRows(); row++) {
+            var colLen = hot.countCols()
+            for (let col = 0; col < colLen - unitsLen; col++) {
+                hot.setCellMeta(row, col, 'readOnly', true);
+            }
+            for (let col = colLen - unitsLen; col < colLen; col++) {
+                const value = hot.getDataAtCell(row, 2);
+                if (!isNaN(value) && value !== null && value !== '') {
+                    const source = Array.from({ length: value }, (_, i) => i + 1);
+                    hot.setCellMeta(row, col, 'source', source);
+                } else {
+                    hot.setCellMeta(row, col, 'readOnly', true);
+                }
+            }
+            //hot.render();
+        }
     });
-    $("#excelTable").show()
+   
 }
+var sss

@@ -19,8 +19,8 @@ namespace ReviewWebsite.Models.Db
         [StringLength(30)] // 對應 NVARCHAR(30)
         public string? Email { get; set; }
 
-        [StringLength(20)] // 對應 NVARCHAR(20)
-        public string? Password { get; set; }
+        //[StringLength(20)] // 對應 NVARCHAR(20)
+        //public string? Password { get; set; }
 
         [StringLength(10)] // 對應 NVARCHAR(10)
         public string? Identification { get; set; }

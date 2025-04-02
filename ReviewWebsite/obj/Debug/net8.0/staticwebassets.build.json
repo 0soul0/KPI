@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FNWizEBsVAsde0t+ivUtTdyItTzwfUhXIe16OOYUn6M=",
+  "Hash": "4ewycbvVlcMf1h86UFWaZHGuIionJys36eZDby5eiWw=",
   "Source": "ReviewWebsite",
   "BasePath": "_content/ReviewWebsite",
   "Mode": "Default",
@@ -16,44 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ReviewWebsite.styles.css",
-      "SourceId": "ReviewWebsite",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/ReviewWebsite",
-      "RelativePath": "ReviewWebsite.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ReviewWebsite.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ReviewWebsite.bundle.scp.css",
-      "SourceId": "ReviewWebsite",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/ReviewWebsite",
-      "RelativePath": "ReviewWebsite.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ReviewWebsite.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\bill.liu\\Desktop\\Project\\web\\ReviewWebsite\\ReviewWebsite\\wwwroot\\assets\\user.png",
       "SourceId": "ReviewWebsite",

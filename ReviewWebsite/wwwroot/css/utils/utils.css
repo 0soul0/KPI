@@ -30,9 +30,8 @@
 }
 
 .scroll-container {
-    width: 100%; /* 設定容器寬度 */
-    height: auto;
-    overflow: auto; /* 垂直滾動 */
+    width: 100%;  
+    overflow: auto;  
     min-height: 85vh;
 }
 

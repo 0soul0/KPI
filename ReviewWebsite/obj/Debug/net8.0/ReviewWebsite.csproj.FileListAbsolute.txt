@@ -249,10 +249,7 @@ C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ReviewWebsite.props
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ReviewWebsite.props
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
-C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\scopedcss\Views\Shared\_ManageLayout.cshtml.rz.scp.css
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\scopedcss\bundle\ReviewWebsite.styles.css
-C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\scopedcss\projectbundle\ReviewWebsite.bundle.scp.css
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWe.DDDD65F2.Up2Date
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\ReviewWebsite.dll
 C:\Users\bill.liu\Desktop\Project\web\ReviewWebsite\ReviewWebsite\obj\Debug\net8.0\refint\ReviewWebsite.dll
