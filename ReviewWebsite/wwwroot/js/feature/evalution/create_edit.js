@@ -52,7 +52,8 @@ function bindEvent() {
                 "Data": JSON.stringify(data),
                 "FromName": handsontable.getDataAtCell(0, 1),
                 "Year": handsontable.getDataAtCell(0, 0),
-                "Units": units
+                "Units": units,
+                "UpdateTime": $("#UpdateTime").text().trim()
                 //"EvaluationId": $("#FormId").text().trim()
             },
             function (response) {
@@ -62,6 +63,9 @@ function bindEvent() {
                 log(response)
             },
             function (error) {   // 自定义错误处理
+                if (error.code == 501) {
+                    alert(error.message)
+                }
                 log(error)
             },
             false

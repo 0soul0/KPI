@@ -10,6 +10,7 @@ namespace ReviewWebsite.Controllers
         public const int RESPONCE_CODE_200 = 200;
         public const int RESPONCE_CODE_400 = 400;
         public const int RESPONCE_CODE_500 = 500;
+        public const int RESPONCE_CODE_501 = 501;
 
         public static JsonResult ResponseJson(this Controller controller, int code,string data="",string extraData="", string message = "")
         {
@@ -20,6 +21,7 @@ namespace ReviewWebsite.Controllers
                     RESPONCE_CODE_200 => "",
                     RESPONCE_CODE_400 => "資料錯誤",
                     RESPONCE_CODE_500 => "更新資料失敗,請重新嘗試",
+                    RESPONCE_CODE_501 => "資料已經被更新過了,請刷新後再重新編輯",
                     _ => "未知錯誤"
                 };
             }
@@ -49,5 +51,13 @@ namespace ReviewWebsite.Controllers
             if (request == null) throw new ArgumentNullException(nameof(request));
             return request.Headers["X-Requested-With"] == "XMLHttpRequest";
         }
+
+        public static long TotalSeconds(this DateTime dateTime)
+        {
+            var utcDateTime = dateTime.ToUniversalTime();
+            var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            return (long)(utcDateTime - epoch).TotalSeconds;
+        }
+
     }
 }

@@ -15,7 +15,7 @@ function cacheData() {
         var value = $(this).text()
         itemTxtToViewMap[value] = this
     });
-    hotTableData=$.parseJSON($("#Data").text())
+    hotTableData = $.parseJSON($("#Data").text())
 }
 
 function initExcelTable() {
@@ -57,7 +57,8 @@ function bindEvent() {
 
         var data = handsontable.getData()
 
-        let href = getCurrentHref()
+        let url = getCurrentHref()
+        let href = url.substring(0, url.lastIndexOf('/'));
         loadAjax(
             'POST',
             href,
@@ -65,7 +66,8 @@ function bindEvent() {
                 "Data": JSON.stringify(data),
                 "Name": handsontable.getDataAtCell(0, 1),
                 "Year": handsontable.getDataAtCell(0, 0),
-                "FormId": $("#FormId").text().trim()
+                "FormId": $("#FormId").text().trim(),
+                "UpdateTime": $("#UpdateTime").text().trim(),
             },
             function (response) {   // 自定义错误处理
                 if (response.code == 200) {
@@ -74,6 +76,9 @@ function bindEvent() {
                 log(response)
             },
             function (error) {   // 自定义错误处理
+                if (error.code == 501) {
+                    alert(error.message)
+                }
                 log(error)
             },
             false

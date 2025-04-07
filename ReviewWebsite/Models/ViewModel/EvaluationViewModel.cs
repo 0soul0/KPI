@@ -18,5 +18,7 @@ namespace ReviewWebsite.Models.ViewModel
         public int Year { get; set; }
 
         public string Units { get; set; }
+
+        public String UpdateTime { get; set; }
     }
 }

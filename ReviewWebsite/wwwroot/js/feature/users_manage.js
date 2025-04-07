@@ -22,7 +22,6 @@ function createUserOrUnitTable() {
 //        $("#unit-btn").trigger('click');
 //    }
 //}
-
 function bindEvent() {
     $("#userInfoModal").on('show.bs.modal', function (event) {
         var userId = $(event.relatedTarget).data('id');
@@ -33,7 +32,7 @@ function bindEvent() {
         $("#Email").val(userInfo.get(2).textContent.trim());
         $("#Birthday").val(userInfo.get(3).textContent.trim());
         $("#Telephone").val(userInfo.get(4).textContent.trim());
-        $("#AccessRight").val(userInfo.get(5).dataset.accessNumber);
+        $("#AccessRight").val(userInfo.get(6).dataset.accessNumber);
     });
     $("#submitUser").on('click', function () {
         loadAjax(

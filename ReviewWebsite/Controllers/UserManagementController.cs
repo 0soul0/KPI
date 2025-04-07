@@ -5,6 +5,7 @@ using ReviewWebsite.Data;
 using ReviewWebsite.Helpers;
 using ReviewWebsite.Models.Db;
 using ReviewWebsite.Models.ViewModel;
+using ReviewWebsite.Models.ViewModel.Request;
 using ReviewWebsite.Utils;
 using System.Text;
 using System.Text.Json;
@@ -44,7 +45,7 @@ namespace ReviewWebsite.Controllers
 
         [HttpPost]
         [Consumes("application/json")]
-        public async Task<IActionResult> EditUser([FromBody] User User)
+        public async Task<IActionResult> EditUser([FromBody] UserRequest User)
         {
 
             if (User == null)

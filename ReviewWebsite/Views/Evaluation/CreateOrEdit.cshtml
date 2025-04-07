@@ -56,11 +56,14 @@
 
     </div>
 }
+
+@* 編輯時顯示 *@
 @if (Model.Evaluation != null)
 {
     <div>
         <span id="EvaluationId" hidden>@Model.Evaluation.EvaluationId</span>
         <span id="Data" hidden>@Model.Evaluation.Data</span>
+        <span id="UpdateTime" hidden>@Model.Evaluation.UpdateTime</span>
     </div>
 }
 <div id="excelTable" class="card shadow-sm mt-2 hidden">

@@ -45,8 +45,10 @@ function loadAjax(type, href, data, onSuccess, onError, changeUrl = true) {
                     onSuccess(response);
                 }
             } else {
-
-
+                console.log("error:" + response)
+                if (typeof onError === 'function') {
+                    onError(response);
+                }
             }
         },
         error: function (error) {

@@ -7,6 +7,7 @@ using ReviewWebsite.Helpers;
 using ReviewWebsite.Models.Db;
 using ReviewWebsite.Models.ViewModel;
 using ReviewWebsite.Models.ViewModel.Request;
+using System;
 using System.Text.Json;
 
 namespace ReviewWebsite.Controllers
@@ -129,16 +130,21 @@ namespace ReviewWebsite.Controllers
                     // 更新 Form 表
                     var form = await _context.Form.FirstOrDefaultAsync(p => p.FormId == formViewModel.FormId);
                     if (form == null) {
-                        throw new Exception("form is null");
+                        return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_400);
                     }
+
+                    if (DateTime.Parse(formViewModel.UpdateTime).TotalSeconds() != form.UpdateTime.TotalSeconds()) {
+                        return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_501);
+                    }
+           
                     form.Data = formViewModel.Data;
                     form.UpdateTime = DateTime.Now;
-
+                 
                     // 更新 FormList 表
                     var formList = await _context.FormList.FirstOrDefaultAsync(p => p.FormId == formViewModel.FormId);
                     if (formList == null)
                     {
-                        throw new Exception("form is null");
+                        return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_400);
                     }
                     formList.Name = formViewModel.Name;
                     formList.Year = formViewModel.Year;
@@ -159,39 +165,6 @@ namespace ReviewWebsite.Controllers
             }
 
         }
-
-
-        //[HttpPost]
-        //[Consumes("application/json")]
-        //public IActionResult AddItemRow([FromBody] AddItemRowRequest data)
-        //{
-
-        //    string type = data.Type ?? "item";
-        //    int rowCount = data.RowCount > 0 ? data.RowCount : 1;
-
-        //    var viewModel = new FormContent() { FormContentId = "", FormHeadId = "", RowIndex = rowCount, Type = type };
-
-        //    ViewData["Widths"] = getTabeHeadsWidth();
-        //    ViewData["SubTitleWidths"] = getTabeHeadsWidth().Skip(1).Take(5).Sum();
-        //    // 返回新的行的 HTML 結構
-        //    return PartialView("_ItemRow", viewModel);
-        //}
-
-        //private List<float> getTabeHeadsWidth()
-        //{
-        //    List<float> widths = new List<float>();
-        //    widths.Add(2);
-        //    widths.Add(13);
-        //    widths.Add(23);
-        //    widths.Add(20);
-        //    widths.Add(25);
-        //    widths.Add(10);
-        //    widths.Add(5);
-        //    return widths;
-        //}
-
-
-
 
     }
 }

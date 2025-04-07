@@ -173,6 +173,11 @@ namespace ReviewWebsite.Controllers
                     if (evaluation == null) {
                         throw new Exception("evaluation is null");
                     }
+
+                    if (DateTime.Parse(viewModel.UpdateTime).TotalSeconds() != evaluation.UpdateTime.TotalSeconds())
+                    {
+                        return this.ResponseJson(ControllerExtensions.RESPONCE_CODE_501);
+                    }
                     evaluation.Data = viewModel.Data;
                     evaluation.UpdateTime = DateTime.Now;
 
