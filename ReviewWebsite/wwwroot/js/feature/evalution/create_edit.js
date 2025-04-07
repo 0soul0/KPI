@@ -76,11 +76,11 @@ function bindEvent() {
 function getOrCheckEdit() {
     if ($("#Data").is("*")) {
         var data = $.parseJSON($("#Data").text())
-        createEvalutionTable(data, data[0].length-6)
+        createEvalutionTable(data, data[0].length - 6)
     }
 }
 
-function createEvalutionTable(data, unitsLen) {
+function createEvalutionTable(data, unitsLen, callback) {
     $("#excelTable").show()
     createExcelTable(data, 'spreadsheet', afterRender = function (changes) {
 
@@ -91,17 +91,36 @@ function createEvalutionTable(data, unitsLen) {
                 hot.setCellMeta(row, col, 'readOnly', true);
             }
             for (let col = colLen - unitsLen; col < colLen; col++) {
-                const value = hot.getDataAtCell(row, 2);
-                if (!isNaN(value) && value !== null && value !== '') {
-                    const source = Array.from({ length: value }, (_, i) => i + 1);
-                    hot.setCellMeta(row, col, 'source', source);
-                } else {
+               
+                //限制KPI連動
+                 const kpi = hot.getDataAtCell(row, 5);
+                if (kpi !== null && kpi !== '' && kpi.split(",").indexOf(cookieUser.Unit.Name)==-1) {
                     hot.setCellMeta(row, col, 'readOnly', true);
+                /*    setRowClass(hot, row, 'bg-secondary bg-opacity-25')*/
+                    hot.setCellMeta(row, col, 'className', 'bg-secondary bg-opacity-25');
+                    continue
                 }
+                //設定下拉選單
+                const score = hot.getDataAtCell(row, 2);
+                if (isNaN(score) || score == null || score == '') {
+                    hot.setCellMeta(row, col, 'readOnly', true);
+                } else {
+                    const source = Array.from({ length: score }, (_, i) => i + 1);
+                    hot.setCellMeta(row, col, 'source', source);
+                }
+           
+                
             }
-            //hot.render();
+         
         }
     });
    
 }
-var sss
+
+
+function setRowClass(hot,rowIndex, className) {
+    const colCount = hot.countCols();
+    for (let colIndex = 0; colIndex < colCount; colIndex++) {
+        hot.setCellMeta(rowIndex, colIndex, 'className', className);
+    }
+}
